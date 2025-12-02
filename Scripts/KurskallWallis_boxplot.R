@@ -9,3 +9,4 @@ kruskal.test(Prod ~ Groupe, data = PBDataFor_KruskallWallis_BoxPlot)
 
 #### Vérification des différences significatives entre les guildes trophiques - Test de Dunn avec correction de Holm ####
 dunnTest(Prod ~ Groupe, data = PBDataFor_KruskallWallis_BoxPlot, method = "holm")
+
