@@ -170,4 +170,3 @@ ggplot() + theme_bw() +
     y=labs[2],
   )->objXpoint
 objXpoint 
-
