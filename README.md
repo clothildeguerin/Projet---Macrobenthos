@@ -2,6 +2,7 @@
 # FAIRisation d'un projet de stage de Master 1 _"Evolution de la production secondaire d'une communauté macrobenthique de sable fin en baie de Morlaix"_
 ## I- Introduction 
 ### 1) Description du projet 
+AJOUTER IMAGE DU SITE ?
 Les pressions anthropiques croissantes perturbent le fonctionnement des
 écosystèmes côtiers. Suite à la marée noire de l’Amoco Cadiz en 1978, la
 station Pierre Noire (baie de Morlaix) fait l’objet d’un suivi à long
@@ -27,6 +28,7 @@ Ainsi, il est nécessaire que l'étude soit reproductible par tous, le plus rapi
 Cela est possible grâce à l'utilisation d'une démarche FAIR.
 
 ### 1) Rappels de ce qu'est une démarche FAIR
+![](./Images/FAIR_Image_NIH.png)
 #### a) F
 #### b) A
 #### c) I
