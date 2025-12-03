@@ -1,7 +1,11 @@
-#### Analyse statistique - Comparaison de la productivité (P/B) ####
-#entre les différents groupes trophiques identifiés,
-#sur l'ensemble de la période étudiée (2010-2022) 
-
+########################################################
+# Description : Analyse statistique - Comparaison de la productivité (P/B),
+#               entre les différents groupes trophiques identifiés,
+#               sur l'ensemble de la période étudiée (2010-2022). 
+# Nom : KruskallWallis_Boxplot_Productivity.R
+# Auteur : Clothilde GUERIN (PID = ...)
+# Date : 3 Décembre 2025
+########################################################
 #Chargement des données
 PBDataFor_KruskallWallis_BoxPlot <- read.csv("data/PBDataFor_KruskallWallis_BoxPlot.csv", sep = ",")
 
