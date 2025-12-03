@@ -2,7 +2,7 @@
 # FAIRisation d'un projet de stage de Master 1 _"Evolution de la production secondaire d'une communauté macrobenthique de sable fin en baie de Morlaix"_
 ## I- Introduction 
 ### 1) Description du projet 
-AJOUTER IMAGE DU SITE ?
+![Carte montrant l'emplacement du site d'étude : Pierre Noire](./Images/MapPierreNoire.png)
 Les pressions anthropiques croissantes perturbent le fonctionnement des
 écosystèmes côtiers. Suite à la marée noire de l’Amoco Cadiz en 1978, la
 station Pierre Noire (baie de Morlaix) fait l’objet d’un suivi à long
