@@ -38,11 +38,15 @@ stage de Master 1 de Clothilde Guerin (Année universitaire 2024-2025).
 
 ### 1) Données d'entrée
 Pour répondre aux objectifs, les fichiers Excels fournis au départ du stage sont les suivants : 
-- "pn-2010-2022_compil-abundance_biomasses_harm_iso" : Abondances et biomasses individuelles mars et octobre tous les ans
+- "pn-2010-2022_compil-abundance_biomasses_harm_iso" METTRE .XLS AU LIEU DES GUILLEMETS ??? : Abondances et biomasses individuelles mars et octobre tous les ans
 entre 2010 et 2022 
 - "FC-PN-77-07_AD" : Matrice de traits fonctionnels (incomplète) 
 - "ProductivityANN01" : Macroexcel Brey (à mettre sur github car standard) 
 
+Exemple : 
+```
+
+```
 **Les Dataset initiaux utilisés sur le logiciel Rstudio n'étaient pas nommés de manière claire et compréhensible par tous.**
 Tableau biomasse exemple (sous forme de chunck où on colle avec TABulations)
 --> Pas de métadonnées 
@@ -121,6 +125,7 @@ Deux fichiers csv ont été crée afin de faciliter la lecture du tableau princi
 - ["MetadataTaxonomy-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataTaxonomy-PierreNoire-2010-2022.csv) : Nom dans le tableau donné pour le stage M1, AlphaID et nom
     accepté (au 2 Décembre 2025) en important les noms scientifiques
     (Genre espèce ou genre sans sp. ou spp. derrière si l'espèce n'était pas spécifiée) sur WoRMS
+Ajouter exemple métadata ou pas vu qu'on met le lien ?
 - ["MetadataSampling-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataSampling-PierreNoire-2010-2022.csv) : fichier contenant la méthode d'échantillonage, la latitude, 
    la longitude, le PID associé, la profondeur, la date d'échantillonage, la surface échantilloné, l'unité 
    et enfin l'opérateur (non renseignée ici car infirmation indisponible)
@@ -149,7 +154,7 @@ Suite à nos modifications, nous proposons une nouvelle organisation de l'espace
 │         └── COMPLETER GRAPHES PCA
 ```    
 /!\ données intermédiaires obtenues manuellement mais pour une vraie fairisation aurait dûes être obtenues via R
-
+/!\ Sur github scripts initiaux VS finaux car problème avec un des script et à dû effacer 
 
 ### 4) Explication de l'analyse = "Vrai ReadMe"
 Commencer par fichier biomasse 
