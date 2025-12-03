@@ -1,7 +1,7 @@
 ########################################################
-# Analyse PCOA - Données annuelles de biomasse (sans les espèces rares)
+# Description : Analyse PCOA - Données annuelles de biomasse (sans espèces rares)
 # Nom : PCoA_BiomassWithoutRareSpecies.R
-# Auteur : Clotilde GUERIN
+# Auteur : Clothilde GUERIN (PID = ...)
 # Date : 3 Décembre 2025
 ########################################################
 
@@ -171,9 +171,11 @@ ggplot() + theme_bw() +
   coord_equal() +
   theme(aspect.ratio=1)+
   geom_point(data=AbPCoA.axisX_Bray, aes(x=Axis.1, y=Axis.2, label=rownames(AbPCoA.axisX_Bray)))+
-  geom_text_repel(data=AbPCoA.axisX_Bray, aes(x=Axis.1, y=Axis.2, label=rownames(AbPCoA.axisX_Bray)))+
-  labs(
-    x=labs[1], 
-    y=labs[2],
-  )->objXpoint
+  geom_text_repel(data=AbPCoA.axisX_Bray, aes(x=Axis.1, y=Axis.2, label=rownames(AbPCoA.axisX_Bray)))->objXpoint
+# I comment the error, since "labs" do not exist
+#  +
+#  labs(
+#  x=labs[1], 
+#  y=labs[2],)
+
 objXpoint 
