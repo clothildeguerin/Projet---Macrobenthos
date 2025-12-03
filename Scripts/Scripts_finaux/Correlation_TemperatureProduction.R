@@ -4,6 +4,8 @@
 # Nom : Correlation_TemperatureProduction.R
 # Auteur : Clothilde GUERIN (PID = ...)
 # Date : 3 Décembre 2025
+# R Version : RStudio 2025.05.1+513 "Mariposa Orchid" Release (ab7c1bc795c7dcff8f26215b832a3649a19fc16c, 2025-06-01) for Ubuntu Jammy
+# Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0, Quarto 1.6.42 (/usr/lib/rstudio-server/bin/quarto/bin/quarto)
 ########################################################
 #Chargement des données
 CorrelationData_TProd <- read.csv("data/CorrelationData_TProd.csv", check.names = FALSE)
