@@ -117,12 +117,13 @@ ont été estimés si rien n'a été trouvé dans le bibliographie
 
 ### 2) Ajout de métadonnées
 Deux fichiers csv ont été crée afin de faciliter la lecture du tableau principal ("ComptageBiomasseFaune-PierreNoire-2010-2022"), leur noms indiquant explicitement le contenu :
-- "MetadataTaxonomy-PierreNoire-2010-2022": Nom dans le tableau donné pour le stage M1, AlphaID et nom
+- ["MetadataTaxonomy-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataTaxonomy-PierreNoire-2010-2022.csv) : Nom dans le tableau donné pour le stage M1, AlphaID et nom
     accepté (au 2 Décembre 2025) en important les noms scientifiques
     (Genre espèce ou genre sans sp. ou spp. derrière si l'espèce n'était pas spécifiée) sur WoRMS
 - "MetadataSampling-PierreNoire-2010-2022" : fichier contenant la méthode d'échantillonage, la latitude, 
    la longitude, le PID associé, la profondeur, la date d'échantillonage, la surface échantilloné, l'unité 
    et enfin l'opérateur (non renseignée ici car infirmation indisponible)
+   
     
 ### 3) Organisation de l'espace de travail
 Suite à nos modifications, nous proposons une nouvelle organisation de l'espace de travail :
