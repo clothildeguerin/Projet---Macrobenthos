@@ -81,7 +81,8 @@ Ce README ne faisait pas partie des documents initiaux donc il n'y a pas d'expli
 ### 4) Données intermédiaires
 
 ### 5) Scripts initiaux
-Voici un exemple de script non FAIRisé (extrait du script "") : 
+
+Voici un exemple d'un script (["PCoA Bio withoutrare.R"](./Scripts/Scripts_initiaux/PCoA Bio withoutrare.R)) non FAIRisé : 
 
 ```
 library(vegan)
@@ -120,7 +121,7 @@ Deux fichiers csv ont été crée afin de faciliter la lecture du tableau princi
 - ["MetadataTaxonomy-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataTaxonomy-PierreNoire-2010-2022.csv) : Nom dans le tableau donné pour le stage M1, AlphaID et nom
     accepté (au 2 Décembre 2025) en important les noms scientifiques
     (Genre espèce ou genre sans sp. ou spp. derrière si l'espèce n'était pas spécifiée) sur WoRMS
-- "MetadataSampling-PierreNoire-2010-2022" : fichier contenant la méthode d'échantillonage, la latitude, 
+- ["MetadataSampling-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataSampling-PierreNoire-2010-2022.csv) : fichier contenant la méthode d'échantillonage, la latitude, 
    la longitude, le PID associé, la profondeur, la date d'échantillonage, la surface échantilloné, l'unité 
    et enfin l'opérateur (non renseignée ici car infirmation indisponible)
    
@@ -174,15 +175,37 @@ Calculs productions au seind es excel mais aurait du etre fait sur R, donc ne se
 Pour réaliser les statistiques, des fichiers excel intermédiaires ont été faits mais ne sont pas fairisable (devrait faire scripts mais manque de temps) mais on s'est servi de fichiers excel, cela peut constituer un biais.
 
 ### 6) Analyses / scripts
+Tel donnée intermédiaire utilisé pour tel script pour obtenir telle analyse.
+
 Pas d'ordre spécifique aux scripts car chacun correspond à une analyse différente
--  "" SOMLIT = regression temperature production (à ne pas mettre pour linstant car on se préoccupe seulement de lobjectif calculer la production pour linstant ?)
-Permet de rep à la question est ce quil y a correlation
--   Liens et exemples de début scripts PCoA 
--   Liens qui va aux scripts Cor1, 2, 3 et Kruskall
-Exemple du meme exemple plus haut 
-+ leur description et dire ce qu'on a fait (commenter+, read, bannière, structure, version de R (à ajouter dans la bannière ?), versions des packages à mettre)
+Le script initial ["PCoA Bio withoutrare.R"](./Scripts/Scripts_initiaux/PCoA Bio withoutrare.R) à été amélioré en ["PCoA_BiomassWithoutRareSpecies.R"](./Scripts/Scripts_finaux/PCoA_BiomassWithoutRareSpecies.R) comme suis : 
+```
+########################################################
+# Description : Analyse PCOA - Données annuelles de biomasse (sans espèces rares)
+# Nom : PCoA_BiomassWithoutRareSpecies.R
+# Auteur : Clothilde GUERIN (PID = ...)
+# Date : 3 Décembre 2025
+########################################################
+
+##### Chargement des données ####
+PCoA_Bio_WithoutRareSpecies <- read.csv("data/PCoA_Bio_WithoutRareSpecies.csv")
+
+##### Chargement de la librairie ####
+library(vegan) #PCoA et distance de Bray-Curtis
+...
+library(ggrepel) #empêche les étiquettes de se chevaucher
+
+#### Mise en forme du jeu de donnée ####
+
+# La colonne "année" doit être officialisée car elle n'est pas correctement définie dans le dataset d'origine
+head(PCoA_Bio_WithoutRareSpecies)
+rownames(PCoA_Bio_WithoutRareSpecies)
+...
+```
+Ainsi, ont été ajoutés : la bannière (auteur, date version, description), titres et commentaires plus clairs/ détaillés (notemment des packages mais devraient eux aussi avoir leur version - manque de temps), et le chargement des données.
 Mais manque le fait que tout doit être écrit en anglais
 
+## IV- Conclusion
 ### **à retirer ?** Axes d'améliorations qui n'ont pas pu être mis en place (à intégrer direct au fil du readme)
 Certains formatages et calculs comme ceux de la production, la productivité, etc. ont été effectués manuellement sur Excel lors du stage, 
 qui auraient mérités d'être réalisés avec R pour augmenter la reproductibilité, 
@@ -190,3 +213,4 @@ cependant nous n'avons pas pu les modifier dans le temps imparti.
 
 -   Montrer les premières lignes des scripts améliorés avec leurs noms
     en haut comme ex du diapo
+Au final, 
