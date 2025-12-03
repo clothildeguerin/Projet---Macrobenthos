@@ -4,7 +4,7 @@
 ## Etat initial
 
 Tout d'abord, nous décrivons l'état initial non fairisé, juste après le
-stage. 
+stage. Dans la deuxième partie, nous verrons comment fairiser la structure, les métadonnées, les analyses.
 ### Description du projet 
 _Se rapporter au rapport de stage pour le materiel et méthodes, contexte plus élaboré_
 
