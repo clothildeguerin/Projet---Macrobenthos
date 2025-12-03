@@ -1,4 +1,12 @@
-#### Analyse statistique - Comparaison de la productivité (P/B) entre les différents groupes trophiques identifiés, sur l'ensemble de la période étudiée (2010-2022) ####
+#### Analyse statistique - Comparaison de la productivité (P/B) ####
+#entre les différents groupes trophiques identifiés,
+#sur l'ensemble de la période étudiée (2010-2022) 
+
+#Chargement des données
+PBDataFor_KruskallWallis_BoxPlot <- read.csv("data/PBDataFor_KruskallWallis_BoxPlot.csv", sep = ",")
+
+#Chargement des librairies
+library(FSA) #Pour effectuer Test de Dunn (dunnTest)
 
 #### Représentation boxplot et test de Kruskal-Wallis ####
 boxplot(Prod ~ Groupe, data = PBDataFor_KruskallWallis_BoxPlot,
@@ -9,4 +17,3 @@ kruskal.test(Prod ~ Groupe, data = PBDataFor_KruskallWallis_BoxPlot)
 
 #### Vérification des différences significatives entre les guildes trophiques - Test de Dunn avec correction de Holm ####
 dunnTest(Prod ~ Groupe, data = PBDataFor_KruskallWallis_BoxPlot, method = "holm")
-
