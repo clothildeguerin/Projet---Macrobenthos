@@ -1,23 +1,30 @@
-##### Analyse PCOA - Données annuelles de biomasse (sans les espèces rares) ####
+########################################################
+# Analyse PCOA - Données annuelles de biomasse (sans les espèces rares)
+# Nom : PCoA_BiomassWithoutRareSpecies.R
+# Auteur : Clotilde GUERIN
+# Date : 3 Décembre 2025
+########################################################
+
+##### Chargement des données ####
+PCoA_Bio_WithoutRareSpecies <- read.csv("data/PCoA_Bio_WithoutRareSpecies.csv")
 
 ##### Chargement de la librairie ####
-
-library(vegan)
-library(ade4)
-library(factoextra)
-library(FactoMineR)
-library(tidyverse)
-library(plyr)
-library(ape)
-library(pls)
-library(ggplot2)
-library(broom)
-library(glue)
-library(writexl)
-library(cowplot)
-library(gridExtra)
-library(ggforce)
-library(ggrepel)
+library(vegan) #PCoA et distance de Bray-Curtis
+library(ade4) #extraire et visualiser résultats analyses multivariées
+library(factoextra) #extraire et visualiser résultats analyses multivariées
+library(FactoMineR) #extraire et visualiser résultats analyses multivariées
+library(tidyverse) #facilite la manipulation, le nettoyage et la transformation
+library(plyr) #diviser, appliquer et combiner des données
+library(ape) #pour analyse pcoa
+library(pls) #analyse de régression et de classification
+library(ggplot2) #options graphiques
+library(broom) #transformer les sorties statistiques en tibbles
+library(glue) #incorporer dynamiquement des valeurs
+library(writexl) #exporter des data frames
+library(cowplot) #combinaison et l'alignement de plusieurs graphiques
+library(gridExtra) #graphiques en grille
+library(ggforce) #ajoutant des géométries et fonctionnalités spéciales
+library(ggrepel) #empêche les étiquettes de se chevaucher
 
 #### Mise en forme du jeu de donnée ####
 
