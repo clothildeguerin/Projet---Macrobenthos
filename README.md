@@ -119,7 +119,7 @@ ont été estimés si rien n'a été trouvé dans le bibliographie
 Deux fichiers csv ont été crée afin de faciliter la lecture du tableau principal ("ComptageBiomasseFaune-PierreNoire-2010-2022"), leur noms indiquant explicitement le contenu :
 - "MetadataTaxonomy-PierreNoire-2010-2022": Nom dans le tableau donné pour le stage M1, AlphaID et nom
     accepté (au 2 Décembre 2025) en important les noms scientifiques
-    (Genre espèce) sur WoRMS
+    (Genre espèce ou genre sans sp. ou spp. derrière si l'espèce n'était pas spécifiée) sur WoRMS
 - "MetadataSampling-PierreNoire-2010-2022" : fichier contenant la méthode d'échantillonage, la latitude, 
    la longitude, le PID associé, la profondeur, la date d'échantillonage, la surface échantilloné, l'unité 
    et enfin l'opérateur (non renseignée ici car infirmation indisponible)
@@ -181,7 +181,6 @@ Permet de rep à la question est ce quil y a correlation
 Exemple du meme exemple plus haut 
 + leur description et dire ce qu'on a fait (commenter+, read, bannière, structure, version de R (à ajouter dans la bannière ?), versions des packages à mettre)
 Mais manque le fait que tout doit être écrit en anglais
-
 
 ### **à retirer ?** Axes d'améliorations qui n'ont pas pu être mis en place (à intégrer direct au fil du readme)
 Certains formatages et calculs comme ceux de la production, la productivité, etc. ont été effectués manuellement sur Excel lors du stage, 
