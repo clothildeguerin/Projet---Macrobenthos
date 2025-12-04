@@ -93,12 +93,12 @@ Ce README ne faisait pas partie des documents initiaux donc il n'y a pas d'expli
 
 #### b) Scripts initiaux
 
-Voici un exemple d'un script (["PCoA Bio withoutrare.R"](./Scripts/Scripts_initiaux/PCoA Bio withoutrare.R)) non FAIRisé : 
+Voici un exemple d'un script (["PCoA Bio withoutrare.R"](./Scripts/Scripts_initiaux/PCoA\ Bio\ withoutrare.R)) non FAIRisé : 
 
 ```
-library(vegan)
+1 library(vegan)
 ... 
-library("writexl")
+9 library("writexl")
 
 # j'officialise la colonne année dans pas PCoA
 head(PCoA_Bio_wthrare)
