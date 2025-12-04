@@ -93,7 +93,7 @@ Ce README ne faisait pas partie des documents initiaux donc il n'y a pas d'expli
 
 #### b) Scripts initiaux
 
-Voici un exemple d'un script (["PCoA Bio withoutrare.R"](./Scripts/Scripts_initiaux/PCoA-Bio-withoutrare.R)) non FAIRisé : 
+Voici un exemple d'un script (["PCoA Bio withoutrare.R"](<./Scripts/Scripts_initiaux/PCoA Bio withoutrare.R>)) non FAIRisé : 
 
 ```
 1 library(vegan)
