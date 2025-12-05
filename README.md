@@ -5,7 +5,6 @@ Les encadrants de ce stage étaient Eric THIEBAUT et Pascal RIERA, enseignants-c
 
 ## Introduction 
 ### 1) Description du projet 
-![](./Images/MapPierreNoire.png)
 _Carte montrant l'emplacement du site d'étude : Pierre Noire_
 
 Les pressions anthropiques croissantes perturbent la structure et le fonctionnement des
@@ -32,7 +31,6 @@ Les nombreux fichiers, scripts, et analyses produites durant ce projet pourraien
 
 ### 2) Rappel de la démarche FAIR 
 La démarche FAIR, inscrite dans les principes de la Science Ouverte, correspond à un acronyme décrivant quatre principes essentiels pour garantir la reproductibilité des analyses scientifiques : 
-![](./Images/FAIR_Image_NIH.png)
 #### a) F pour Findable : Les données doivent être faciles à retrouver grâce à des identifiant pérenne (PID), des métadonnées précises, l’ensemble étant déposé sur un entrepôt.
 #### b) A pour Accessible : permet l’accès et le téléchargement des données (protocole de communication standardisé). Les données doivent pouvoir être consultées et téléchargées
 #### c) I pour Interoperable : Les données doivent être exploitables quel que soit l’environnement informatique utilisé (vocabulaire contrôlé, documentation avec un PID)
