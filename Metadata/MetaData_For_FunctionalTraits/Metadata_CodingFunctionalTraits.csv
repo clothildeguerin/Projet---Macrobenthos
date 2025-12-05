@@ -1,0 +1,53 @@
+Traits and modalities,Code
+Maximum body size (cm),
+Very small (< 1 cm),A.1
+Small (1-2cm),A.2
+Small-Medium (3-10 cm),A.3
+Medium (11-20 cm),A.4
+Medium-Large (> 20 cm),A.5
+Life span,
+Short (< 2 years),B.1
+Medium (2-5 years),B.2
+Long (> 5 years),B.3
+Feeding mode,
+Filter-feeder,C.1
+Surface deposit-feeder,C.2
+Sub-surface deposit-feeder,C.3
+Predator - Scavenger,C.4
+Omnivore,C.5
+Grazer,C.6
+Reproductive mode,
+Sexual,H.1
+Asexual,H.2
+Development type,
+Direct development,D.1
+Planktotrophic larva,D.2
+Lecithotrophic larva,D.3
+Movement type,
+Burrower,E.1
+Crawler,E.2
+Swimmer,E.3
+Walker,E.4
+Sessile,E.5
+Tube dweller,E.6
+Sediment reworking type,
+Epifauna,F.1
+Surficial modifiers,F.2
+Biodiffusors,F.3
+Upward conveyors,F.4
+Downward conveyors,F.5
+Regenerators,F.6
+Tolerance to disturbance (AMBI),
+Sensitive,G.1
+Indifferent,G.2
+Tolerant,G.3
+Second-order opportunistic,G.4
+First-order opportunistic,G.5
+,
+,
+,
+,
+,
+,
+,
+,

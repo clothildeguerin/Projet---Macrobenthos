@@ -4,9 +4,10 @@
 # Nom : Correlation_TemperatureProduction.R
 # Auteur : Clothilde GUERIN (PID = ...)
 # Date : 3 Décembre 2025
+# Version R : 4.3.1
 ########################################################
 #Chargement des données
-CorrelationData_TProd <- read.csv("data/CorrelationData_TProd.csv", check.names = FALSE)
+CorrelationData_TProd <- read.csv("Data/InitialData/CorrelationData_TProd.csv", check.names = FALSE)
 #Check names évite la transformation des espace et parenthèses dans le nom
 #des colonnes d'être transformées en points, ce qui faisait bug la suite
 

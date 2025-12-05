@@ -1,12 +1,14 @@
 ########################################################
-# Description : Analyse PCOA - Données annuelles de biomasse (sans espèces rares)
+# Description : Analyse PCOA - Comparaison des données annuelles 
+#               de biomasse (sans espèces rares)
 # Nom : PCoA_BiomassWithoutRareSpecies.R
 # Auteur : Clothilde GUERIN (PID = ...)
 # Date : 3 Décembre 2025
+# Version R : 4.3.1
 ########################################################
 
 ##### Chargement des données ####
-PCoA_Bio_WithoutRareSpecies <- read.csv("data/PCoA_Bio_WithoutRareSpecies.csv")
+PCoA_Bio_WithoutRareSpecies <- read.csv("Data/PCoA_Bio_WithoutRareSpecies.csv")
 
 ##### Chargement de la librairie ####
 library(vegan) #PCoA et distance de Bray-Curtis

@@ -5,9 +5,10 @@
 # Nom : KruskallWallis_Boxplot_Productivity.R
 # Auteur : Clothilde GUERIN (PID = ...)
 # Date : 3 Décembre 2025
+# Version R : 4.3.1
 ########################################################
 #Chargement des données
-PBDataFor_KruskallWallis_BoxPlot <- read.csv("data/PBDataFor_KruskallWallis_BoxPlot.csv", sep = ",")
+PBDataFor_KruskallWallis_BoxPlot <- read.csv("Data/PBDataFor_KruskallWallis_BoxPlot.csv", sep = ",")
 
 #Chargement des librairies
 library(FSA) #Pour effectuer Test de Dunn (dunnTest)
