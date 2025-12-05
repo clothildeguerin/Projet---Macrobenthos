@@ -1,54 +1,58 @@
 **/!\ NE PAS FAIRE "VISUAL" car change la structure**
-# FAIRisation d'un projet de stage de Master 1 _"Evolution de la production secondaire d'une communauté macrobenthique de sable fin en baie de Morlaix"_
-## I- Introduction 
+# FAIRisation d'un projet de stage de Master 1 _"Evolution de la production secondaire d'une communauté macrobenthique de sable fin en baie de Morlaix"_ Réalisé par Clothilde Guerin (Année universitaire 2024-2025).
+
+Les encadrants de ce stage étaient Eric THIEBAUT et Pascal RIERA, enseignants-chercheurs à la Station Biologique de Roscoff. Ce présent document à été rédigé par Laure DOGNON, Clothilde GUERIN et Lola MONTJARRET, étudiantes en Master Sciences de la Mer à Sorbonne Université (2025). 
+
+## Introduction 
 ### 1) Description du projet 
 ![](./Images/MapPierreNoire.png)
 _Carte montrant l'emplacement du site d'étude : Pierre Noire_
 
-Les pressions anthropiques croissantes perturbent le fonctionnement des
+Les pressions anthropiques croissantes perturbent la structure et le fonctionnement des
 écosystèmes côtiers. Suite à la marée noire de l’Amoco Cadiz en 1978, la
-station Pierre Noire (baie de Morlaix) fait l’objet d’un suivi à long
+station Pierre Noire (en baie de Morlaix) fait l’objet d’un suivi à long
 terme de sa communauté macrobenthique. La production secondaire, mesurée
 ou modélisée, est un bon indicateur de l’état écologique d’une
 communauté. Toutefois, cette mesure n’a jamais été appliquée en routine
 sur ce site. Dans le cadre de cette étude, la production secondaire a
-été estimée en utilisant le modèle de Brey. Ce modèle, basé sur un
+été estimée en utilisant le modèle de Brey. Ce modèle empirique, basé sur un
 calcul par réseau de neurones, permet d’estimer la production secondaire
-à partir de diverses variables écologiques.
+à partir de diverses variables écologiques et environnementales.
 
 Problématique de l'étude : quelle est la relation entre l’évolution de la production secondaire et
 les changements de structure de la communauté de Pierre Noire ?
 
-Objectifs du stage était de : 
-- 1 : Compléter le suivis et analyses sur structure + fonctionnement de la communauté macrobenthique de Pierre Noire via l'estimation de la production secondaire
-- 2 : Relier les variations de PS à celle de la structure de la communauté 
-- 3 : Estimer la contribution des groupes taxonomiques + guildes à la PS
-- Objectif additionnel : Comparer les P/B calculés par différents modèles à des valeurs in situ
+Pour répondre à cette question, quatre objectifs ont été définis : 
+- 1 : Compléter les suivis de la communauté macrobenthique de Pierre Noire via l'estimation de la production secondaire
+- 2 : Mettre en évidence la relation entre les variations interannuelles de production secondaire et les changements de structure de cette communauté 
+- 3 : Déterminer la contribution des différents groupes taxonomiques et trophiques à la production secondaire
+- 4 : Comparer les ratios P/B (productivité) calculés par différents modèles empiriques à des valeurs in situ issues de la littérature
 
-De nombreux fichiers, scripts, analyses sont issues de ce genre de projet mais pourraient être intéressantes à réutiliser pour de futurs suivis ou comparaisons, que ce soit par la stagiaire, l'encadrant ou d'autres chercheurs du monde entier.
-Ainsi, il est nécessaire que l'étude soit reproductible par tous, le plus rapidement possible.
-Cela est possible grâce à l'utilisation d'une démarche FAIR.
+Les nombreux fichiers, scripts, et analyses produites durant ce projet pourraient être réutilisés pour de futurs suivis ou comparaisons, que ce soit par la stagiaire, l'encadrant ou d'autres chercheurs. Pour garantir cette réutilisation et permettre la reproductibilité de cette étude, il est essentiel de rendre l’ensemble des données et des traitements transparents et accessibles. C’est précisément ce que vise la démarche FAIR.
 
-### 2) Rappels de ce qu'est une démarche FAIR et 
+### 2) Rappel de la démarche FAIR 
+La démarche FAIR, inscrite dans les principes de la Science Ouverte, correspond à un acronyme décrivant quatre principes essentiels pour garantir la reproductibilité des analyses scientifiques : 
 ![](./Images/FAIR_Image_NIH.png)
-#### a) F
-#### b) A
-#### c) I
-#### d) R
+#### a) F pour Findable : Les données doivent être faciles à retrouver grâce à des identifiant pérenne (PID), des métadonnées précises, l’ensemble étant déposé sur un entrepôt.
+#### b) A pour Accessible : permet l’accès et le téléchargement des données (protocole de communication standardisé). Les données doivent pouvoir être consultées et téléchargées
+#### c) I pour Interoperable : Les données doivent être exploitables quel que soit l’environnement informatique utilisé (vocabulaire contrôlé, documentation avec un PID)
+#### d) R pour Reusable : Les données doivent être réutilisables (attributs pertinents, licence de réutilisation)
 
 ### 3) 
-L'objectii de ce dépot etait de I- revenir sur letat initial et II- de fairiser
+L'objectif de ce dépôt est I) d’analyser l’état initial des données, scripts et analyses produits durant le stage, et II) de proposer une première approche de FAIRisation pour une partie de ces éléments. 
 
-## II- Etat initial
-Dans cette partie nous décrivons l'état initial des données non fairisé juste après le
-stage de Master 1 de Clothilde Guerin (Année universitaire 2024-2025).
+## I- Etat initial
+Dans cette partie nous décrivons l'état initial des données non FAIRisées, juste après le
+stage. 
 
 ### 1) Données d'entrée
-Pour répondre aux objectifs, les fichiers Excels fournis au départ du stage sont les suivants : 
-- "pn-2010-2022_compil-abundance_biomasses_harm_iso" METTRE .XLS AU LIEU DES GUILLEMETS ??? : Abondances et biomasses individuelles mars et octobre tous les ans
-entre 2010 et 2022 
-- "FC-PN-77-07_AD" : Matrice de traits fonctionnels (incomplète) 
-- "ProductivityANN01" : Macroexcel Brey (à mettre sur github car standard) 
+Pour répondre aux objectifs, les fichiers au format Excel (.xlsx) fournis au départ du stage sont les suivants : 
+- pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx : Abondances et biomasses individuelles mars et octobre tous les ans entre 2010 et 2022, pour plus de 200 espèces
+- FC-PN-77-07_AD.xlsx : Matrice de traits fonctionnels complétée par diff thésards, collaborateurs…(incomplète → que j’ai dû compléter à certains endroits)
+- ProductivityANN01.xlsx : Macro Excel développée par Brey permettant de calculer la productivité des espèces, disponible en libre accès sur thomas-brey.de 
+- SOMLIT_RoscoffEstacade_Hydro_v2023.xlsx : Données de température SOMLIT pour la station Estacade (2010-2023), disponible en libre accès sur SEANOE 
+
+Les données de température SOMLIT (station Estacade) sur 2010-2023, disponible en accès libre à  séries temporelles de température pour la station Estacade (2010-2023), accessibles en libre accès sur SEANOE (seanoe.org, DOI 10.17882/100323) ou par demande sur somlit.fr
 
 Exemple : 
 ```
@@ -63,30 +67,30 @@ Tableau biomasse exemple (sous forme de chunck où on colle avec TABulations)
 ├── M1 Sciences de la Mer 
 │   └── Stage Roscoff 
 │       └── Articles stage 
-│           └── Articles de référence
-│           └── différentes versions du rapport de stage et des présentations
+│           └── Articles fournis
+│           └── Différentes versions du rapport de stage et des présentations
 │       └── Data stage
 │           └── Résultats et graphique 
-│               └── fichiers pdf des résultats
-│               └── images des graphiques
+│               └── Fichiers pdf des résultats
+│               └── Images des graphiques
 │           └── Tableau Brey (Taxo + abiotique)
-│               └── “FC-PN-77-07-AD"
-│               └── “Tableau data input Brey (ANN)”
-│               └── taxonomy-PN-77-07.xls
-│               └── “Coding"
+│               └── FC-PN-77-07-AD.xlsx
+│               └── Tableau data input Brey (ANN).xlsx
+│               └── Taxonomy-PN-77-07.xlsx
+│               └── Coding.xlsx
 │           └── Fichiers et scripts PCoA ACP R
 │               └── PCoA_Bio_wthrare
 │               └── Cor_TProd
 │               └── Cor_BioProdg_Somme
-│               └── autres cripts d'exploration des données
+│               └── Scripts tests
 │           └── Comparaison modèles empiriques
 │               └── Images de formules issues des articles
-│               └── Tableau excel avec calculs pour comparer les méthodes
+│               └── Tableaux de comparaison
 ```
-L'organisation de l'espace de travail n'était pas si mal mais il manque de structuration et les noms de fichiers ne sont pas explicites.
+Bien qu'on observe une première logique d'organisation, la structure reste complexe et difficile à appréhender ; les fichiers sont nombreux et ils sont dispersés dans plusieurs sous-dossiers, ce qui rend la navigation complexe. De plus, la langue utilisée n’est pas universelle.
 
 ### 3) Analyses
-Absente. Materiel et methode dans le rapport mais pas de readme donc les détais du passage des données intials aux produits initiaux n'était pas prent donc difficle reproduire
+Initialement, aucun README n’est présent. Il y a bien une partie “matériel et méthodes” dans le rapport, mais cette dernière ne précise pas  mais pas de readme donc les détails du passage des données initials aux produits initiaux n'était pas présent donc difficile à reproduire
 Ce README ne faisait pas partie des documents initiaux donc il n'y a pas d'explications des analyses, cela sera fait dans la partie 2.3.machin. 
 
 #### a) Données intermédiaires
@@ -114,65 +118,71 @@ Le chargement des données intermédiaires est absent (qui était fait manuellem
 Manque
 
 ## III- FAIRisation 
-Dans cette deuxième partie nous indiquons les axes d'améliorations afin de FAIRiser la structure, les métadonnées et les analyses.
-Ce présent document est une première étape dans notre démarche pour rendre FAIR ce travail. 
-Le dernier objectif du stage (comparer litterature) nous a paru difficile à fairiser. 
+Dans cette deuxième partie nous indiquons les axes d'améliorations afin de FAIRiser la structure, les métadonnées et les analyses des données du stage.
+Tout d’abord, ce présent document est une première étape dans notre démarche pour améliorer ce travail. Le dernier objectif du stage (comparaison des modèles empiriques) nous a paru difficile à FAIRiser. Un axe de FAIRisation intéressant aurait été de rédiger ce README en anglais, tout comme les commentaires des scripts sur R, cependant cette tâche (traduction) nous aurait pris trop de temps c’est pourquoi elle est seulement notifiée ici.  
 
 ### 1) Traçage des données initiales 
 - PID de la zone
 - PID de la station PN 
 - PID SOMLIT - PID des auteurs (Sarah
 Bureau) 
-- PAS FAIRISABLE : Il manque les sources de la matrice de traits
-fonctionnels, a été transmise telle quelle, a été complétée sans non plus
+- PAS FAIRisable : Il manque les sources de la matrice de traits
+fonctionnels, a été transmise telle quelle, elle a été complétée sans non plus
 ajouter les sources au fur et à mesure, n'a pas indiqué les endroits qui
-ont été estimés si rien n'a été trouvé dans le bibliographie
+ont été estimés si rien n'a été trouvé dans la bibliographie
 
 ### 2) Ajout de métadonnées
-Deux fichiers csv ont été crée afin de faciliter la lecture du tableau principal ("ComptageBiomasseFaune-PierreNoire-2010-2022"), leur noms indiquant explicitement le contenu :
+Deux fichiers csv ont été créé afin de faciliter la lecture du tableau principal ("ComptageBiomasseFaune-PierreNoire-2010-2022"), leur noms indiquant explicitement le contenu :
 - ["MetadataTaxonomy-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataTaxonomy-PierreNoire-2010-2022.csv) : Nom dans le tableau donné pour le stage M1, AlphaID et nom
     accepté (au 2 Décembre 2025) en important les noms scientifiques
     (Genre espèce ou genre sans sp. ou spp. derrière si l'espèce n'était pas spécifiée) sur WoRMS
 Ajouter exemple métadata ou pas vu qu'on met le lien ?
 - ["MetadataSampling-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataSampling-PierreNoire-2010-2022.csv) : fichier contenant la méthode d'échantillonage, la latitude, 
-   la longitude, le PID associé, la profondeur, la date d'échantillonage, la surface échantilloné, l'unité 
-   et enfin l'opérateur (non renseignée ici car infirmation indisponible)
+   la longitude, le PID associé, la profondeur, la date d'échantillonnage, la surface échantillonnée, l'unité 
+   et enfin l'opérateur (non renseignée ici car information indisponible)
    
     
 ### 3) Organisation de l'espace de travail
 Suite à nos modifications, nous proposons une nouvelle organisation de l'espace de travail :
 ```
-├── Projet macrobenthos
+├──MacrobenthosProductionProject_PierreNoire_2010-2022
 │ └── Inputs
-│     └── Données initales
-│         └── A COMPLETER avec meilleurs noms
-│     └── Metadonnées
-│         └── MetadataTaxonomy-PierreNoire-2010-2022
-│         └── MetadataSampling-PierreNoire-2010-2022
+│     └── Datasets
+│         └── BreyProductivityAutomaticCalculation_MacroExcel.xlsx
+│         └── FunctionalTraitsMatrix.csv
+│         └── BiomassAbundance_PierreNoire_2010-2022.csv
+│     └── Metadata
+│              └── Metadata_BiomassesAbundances
+│                      └── MetadataTaxonomy_PierreNoire_2010-2022.csv
+│                      └── MetadataSampling_PierreNoire_2010-2022.csv
+│              └── Metadata_FunctionalTraitsMatrix
+│                      └── Metadata_CodingFunctionalTraits
 │ └── Scripts
-│     └── PCoa_BiomassWithoutRareSpecies.R
-│     └── Correlation_TemperatureProduction.R
-│     └── KruskalWallis_Boxplot_Productivity.R
+│     └──BiomassWithoutRareSpecies_PCoA.R
+│     └──TemperatureProduction_Correlation.R
+│     └──FunctionalGroup-Productivity_KruskallWallis.R
 │ └── Output  
-│     └── Données intermédiaires 
-│         └── CorrelationData_TProd.csv
-│         └── PBDataFor_KruskallWallis_BoxPlot.csv
-│         └── PCoA_Bio_WithoutRareSpecies.csv
-│     └── Résultats statistiques
-│         └── COMPLETER GRAPHES PCA
+│         └── IntermediateData
+│                 └── DataTemperature-Production_Correlation.csv
+│                 └── DataFunctionalGroup-Productivity_KruskallWallis.csv
+│                 └── DataBiomassWithoutRareSpecies_PCoA.csv
+│         └── StatisticResults
+│                 └── ResultsBiomassWithoutRareSpecies_PCoA.jpeg
+│                 └── ResultsKruskalWallis.jpeg
+│                 └── ResultsTemperature-Production_Correlation.jpeg
 ```    
-/!\ données intermédiaires obtenues manuellement mais pour une vraie fairisation aurait dûes être obtenues via R
+/!\ données intermédiaires obtenues manuellement mais pour une vraie fairisation elles auraient dûes être obtenues via R
 /!\ Sur github scripts initiaux VS finaux car problème avec un des script et à dû effacer 
 
 ### 4) Explication de l'analyse = "Vrai ReadMe"
 Commencer par fichier biomasse 
 Macroexcel a calculé productivité
-_Se rapporter au rapport de stage pour le materiel et méthodes plus étoffé_
+_Se rapporter au rapport de stage pour le matériel et méthodes plus étoffé
 #### Calcul de la production
 Production = Productivité*Biomasse moyenne 
 
 ##### Calcul de la biomasse
-D'après le fichier "pn-2010-2022_compil-abundance_biomasses_harm_iso"" : 
+D'après le fichier pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx : 
 Biomasse moyenne = moyenne des biomasses moyennes en octobre et mars 
 Moyenne pour octobre ou mars = biomasse individuelle moyenne * abondance
 
@@ -184,14 +194,32 @@ brey = temperature
 temperature moyenne = moyenne(temperature / mois somlit)
 
 ### 5) Données intermédiaires
-Calculs productions au seind es excel mais aurait du etre fait sur R, donc ne seront pas traités 
-Pour réaliser les statistiques, des fichiers excel intermédiaires ont été faits mais ne sont pas fairisable (devrait faire scripts mais manque de temps) mais on s'est servi de fichiers excel, cela peut constituer un biais.
+Calculs productions au seind es excel mais aurait du être fait sur R, donc ne seront pas traités 
+Pour réaliser les statistiques, des fichiers excel intermédiaires ont été faits mais ne sont pas FAIRisable (devrait faire scripts mais manque de temps) mais on s'est servi de fichiers excel, cela peut constituer un biais.
 
 ### 6) Analyses / scripts
-Tel donnée intermédiaire utilisé pour tel script pour obtenir telle analyse.
 
-Pas d'ordre spécifique aux scripts car chacun correspond à une analyse différente
-Le script initial ["PCoA Bio withoutrare.R"](./Scripts/Scripts_initiaux/PCoA Bio withoutrare.R) à été amélioré en ["PCoA_BiomassWithoutRareSpecies.R"](./Scripts/Scripts_finaux/PCoA_BiomassWithoutRareSpecies.R) comme suis : 
+Trois des principaux scripts produits lors de ce stage ont été revus afin d’améliorer leur traçabilité et leur réutilisabilité. Chaque script correspond à une analyse indépendante et ne suit donc pas un ordre particulier. Pour chacune des analyses; les données utilisées et les objectifs sont décrits ci-dessous :  
+
+Objectif 1 : Identifier les espèces contribuant le plus aux variations interannuelles de production à partir d’une PCoA
+
+Données utilisées : 
+PCoA_Bio_WithoutRareSpecies.csv → tableau intermédiaire réalisé à partir du fichier initial Macrofauna-PierreNoire-2010-2022.csv, après calcul des biomasses moyennes annuelles et filtrage des espèces rares
+MetadataTaxonomy-PierreNoire-2010-2022.csv → métadonnées taxonomiques associées aux espèces présentes dans le jeu de données initial
+
+Objectif 2 : Comparer les valeurs de productivité entre  différents groupes trophiques
+
+Données utilisées : 
+KruskallWallis_Boxplot_Productivity.csv → tableau intermédiaire contenant les valeurs de productivité calculées à l’aide de la macro Excel de Brey
+Tableau des groupes trophiques → tableau intermédiaire dérivé de la matrice de traits fonctionnels et de son codage, permettant d’attribuer chaque espèces à un groupe trophique
+
+Objectif 3 : Tester l’existence d’une relation entre la température annuelle et la production secondaire
+
+Données utilisées : 
+Correlation_TemperatureProduction.csv → tableau intermédiaire regroupant les valeurs de production annuelle estimées à partir du modèle de Brey
+Données SOMLIT → séries temporelles de température pour la station Estacade (2010-2023), accessibles en libre accès sur SEANOE (seanoe.org, DOI 10.17882/100323) ou par demande sur somlit.fr 
+
+Le script initial ["PCoA Bio withoutrare.R"](./Scripts/Scripts_initiaux/PCoA Bio withoutrare.R) à été révisé et amélioré en ["PCoA_BiomassWithoutRareSpecies.R"](./Scripts/Scripts_finaux/PCoA_BiomassWithoutRareSpecies.R) comme suit : 
 ```
 ########################################################
 # Description : Analyse PCOA - Données annuelles de biomasse (sans espèces rares)
@@ -215,10 +243,9 @@ head(PCoA_Bio_WithoutRareSpecies)
 rownames(PCoA_Bio_WithoutRareSpecies)
 ...
 ```
-Ainsi, ont été ajoutés : la bannière (auteur, date version, description), titres et commentaires plus clairs/ détaillés (notemment des packages mais devraient eux aussi avoir leur version - manque de temps), et le chargement des données.
-Mais manque le fait que tout doit être écrit en anglais
+Ainsi, ont été ajoutés : une bannière structurée (nom complet, description, auteur, date et version), un chargement explicite des données ainsi que des commentaires plus détaillés et une organisation plus claire. En revanche, certains éléments n’ont pas pu être intégrés par contrainte de temps, notamment la traduction complète du script en anglais (diffusion internationale) et la mention des versions des packages utilisés. 
 
-## IV- Conclusion
+## Conclusion
 ### **à retirer ?** Axes d'améliorations qui n'ont pas pu être mis en place (à intégrer direct au fil du readme)
 Certains formatages et calculs comme ceux de la production, la productivité, etc. ont été effectués manuellement sur Excel lors du stage, 
 qui auraient mérités d'être réalisés avec R pour augmenter la reproductibilité, 
@@ -226,4 +253,5 @@ cependant nous n'avons pas pu les modifier dans le temps imparti.
 
 -   Montrer les premières lignes des scripts améliorés avec leurs noms
     en haut comme ex du diapo
-Au final, 
+
+Ce travail de FAIRisation a permis d’améliorer l’organisation et la traçabilité d’une partie des données et analyses réalisées au cours de ce projet. Bien que certaines améliorations n’aient pas pu être finalisées, les corrections menées constituent une base solide pour assurer la réutilisationet la reproductibilité des analyses et résultats. Ce travail pourra ainsi servir de point de départ pour poursuivre les améliorations proposées, prolonger les analyses existantes ou bien pour étendre cette démarche FAIR à d’autres jeux de données. 
