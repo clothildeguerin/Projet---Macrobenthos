@@ -168,8 +168,7 @@ A partir des informations issues de la matrice de traits fonctionnels, attributi
 Création d’un tableau intermédiaire (KruskallWallis_Boxplot_Productivity.csv) regroupant, pour chaque groupe trophique, les valeurs de productivité obtenues précédemment
 
 ##### Etape 3 : Analyse statistique 
-Test de Kruskal - Wallis à partir du fichier KruskallWallis_Boxplot_Productivity.csv  → script [ FunctionalGroupProductivity_KruskalWallis](./Scripts/FinalScripts/ FunctionalGroupProductivity_KruskalWallis) 
-
+Test de Kruskal - Wallis à partir du fichier KruskallWallis_Boxplot_Productivity.csv  → script [FunctionalGroupProductivity_KruskalWallis](./Scripts/FinalScripts/ FunctionalGroupProductivity_KruskalWallis) 
 ##### Etape 4 : Résultat de l’analyse → ResultsKruskalWallis.jpeg
 
 ### 4) Fairisation des scripts
