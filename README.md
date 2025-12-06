@@ -35,12 +35,12 @@ Dans cette partie nous décrivons l'état initial des données non FAIRisées, j
 ### 1) Données d'entrée
 Pour répondre aux objectifs, les fichiers au format Excel (.xlsx) fournis initialement sont les suivants : 
 - pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx : Abondances et biomasses individuelles pour plus de 200 espèces (échantillonnages en mars et octobre, période 2010-2022). En voici un extrait :
-```
+
 | taxon_compil(harm_isotopes) | Analyse en isotopie | mars-10 | Oct-10 | mars-11 | Oct-11 |
 |-----------------------------|---------------------|---------|--------|---------|--------|
 | Abra alba                   |                     | 11      | 30     | 22      | 62     |
 | Abra prismatica             |                     | 3       | 15     | 2       | 17     |
-```
+
 - FC-PN-77-07_AD.xlsx : Matrice de traits fonctionnels alimentée par différents collaborateurs et partiellement complétée durant le stage. Aucun historique des modifications, des contributeurs ni des sources utilisées → traçabilité insuffisante, rendant une FAIRisation complète impossible
 - ProductivityANN01.xlsx : Macro Excel développée par Thomas Brey pour estimer la productivité des espèces (disponible en libre accès sur thomas-brey.de) 
 - SOMLIT_RoscoffEstacade_Hydro_v2023.xlsx : Données de température SOMLIT pour la station Estacade (2010-2023), transmises directement par l’encadrant. Aucun DOI n’y était associé mais elles sont bien trouvables sur SEANOE (seanoe.org, DOI 10.17882/100323) ou sur demande via somlit.fr.
