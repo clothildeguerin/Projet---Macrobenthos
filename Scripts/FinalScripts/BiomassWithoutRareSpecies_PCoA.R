@@ -1,14 +1,84 @@
 ########################################################
 # Description : Analyse PCOA - Comparaison des données annuelles 
 #               de biomasse (sans espèces rares)
-# Nom : PCoA_BiomassWithoutRareSpecies.R
-# Auteur : Clothilde GUERIN (PID = ...)
+# Nom : BiomassWithoutRareSpecies_PCoA.R
+# Auteur : Clothilde GUERIN (ORCID à ajouter mais encore pas créé)
 # Date : 3 Décembre 2025
-# Version R : 4.3.1
+
+#### Session info : 
+# R version 4.3.1 (2023-06-16)
+# Platform: x86_64-conda-linux-gnu (64-bit)
+# Running under: Ubuntu 22.04.5 LTS
+# 
+# Matrix products: default
+# BLAS/LAPACK: /shared/software/miniconda/envs/r-4.3.1/lib/libopenblasp-r0.3.26.so;  LAPACK version 3.12.0
+# 
+# locale:
+#   [1] LC_CTYPE=en_US.UTF-8      
+# [2] LC_NUMERIC=C              
+# [3] LC_TIME=en_US.UTF-8       
+# [4] LC_COLLATE=en_US.UTF-8    
+# [5] LC_MONETARY=en_US.UTF-8   
+# [6] LC_MESSAGES=en_US.UTF-8   
+# [7] LC_PAPER=en_US.UTF-8      
+# [8] LC_NAME=C                 
+# [9] LC_ADDRESS=C              
+# [10] LC_TELEPHONE=C            
+# [11] LC_MEASUREMENT=en_US.UTF-8
+# [12] LC_IDENTIFICATION=C       
+# 
+# time zone: Europe/Paris
+# tzcode source: system (glibc)
+# 
+# attached base packages:
+#   [1] stats     graphics  grDevices utils     datasets 
+# [6] methods   base     
+# 
+# other attached packages:
+#   [1] ggrepel_0.9.5    ggforce_0.4.2    gridExtra_2.3   
+# [4] cowplot_1.1.3    writexl_1.5.0    glue_1.7.0      
+# [7] broom_1.0.6      pls_2.8-5        ape_5.8         
+# [10] plyr_1.8.9       lubridate_1.9.3  forcats_1.0.0   
+# [13] stringr_1.5.1    dplyr_1.1.4      purrr_1.0.2     
+# [16] readr_2.1.5      tidyr_1.3.1      tibble_3.2.1    
+# [19] tidyverse_2.0.0  FactoMineR_2.11  factoextra_1.0.7
+# [22] ggplot2_3.5.1    ade4_1.7-22      vegan_2.6-6.1   
+# [25] lattice_0.22-6   permute_0.9-7    FSA_0.10.0      
+# 
+# loaded via a namespace (and not attached):
+#   [1] gtable_0.3.5         htmlwidgets_1.6.4   
+# [3] tzdb_0.4.0           vctrs_0.6.5         
+# [5] tools_4.3.1          generics_0.1.3      
+# [7] parallel_4.3.1       sandwich_3.1-0      
+# [9] fansi_1.0.6          cluster_2.1.6       
+# [11] pkgconfig_2.0.3      Matrix_1.6-5        
+# [13] scatterplot3d_0.3-44 lifecycle_1.0.4     
+# [15] farver_2.1.2         compiler_4.3.1      
+# [17] munsell_0.5.1        leaps_3.2           
+# [19] codetools_0.2-20     htmltools_0.5.8.1   
+# [21] pillar_1.9.0         MASS_7.3-60.0.1     
+# [23] flashClust_1.01-2    DT_0.33             
+# [25] multcomp_1.4-25      nlme_3.1-165        
+# [27] tidyselect_1.2.1     digest_0.6.34       
+# [29] mvtnorm_1.2-5        stringi_1.8.4       
+# [31] splines_4.3.1        polyclip_1.10-6     
+# [33] fastmap_1.2.0        grid_4.3.1          
+# [35] colorspace_2.1-0     cli_3.6.3           
+# [37] magrittr_2.0.3       survival_3.7-0      
+# [39] utf8_1.2.4           TH.data_1.1-2       
+# [41] withr_3.0.0          backports_1.5.0     
+# [43] scales_1.3.0         timechange_0.3.0    
+# [45] estimability_1.5.1   emmeans_1.10.3      
+# [47] zoo_1.8-12           hms_1.1.3           
+# [49] coda_0.19-4.1        mgcv_1.9-1          
+# [51] rlang_1.1.4          Rcpp_1.0.12         
+# [53] xtable_1.8-4         tweenr_2.0.3        
+# [55] rstudioapi_0.16.0    R6_2.5.1            
+# [57] multcompView_0.1-10 
 ########################################################
 
 ##### Chargement des données ####
-PCoA_Bio_WithoutRareSpecies <- read.csv("Data/PCoA_Bio_WithoutRareSpecies.csv")
+PCoA_Bio_WithoutRareSpecies <- read.csv("Data/DataBiomassWithoutRareSpecies_PCoA.csv")
 
 ##### Chargement de la librairie ####
 library(vegan) #PCoA et distance de Bray-Curtis
