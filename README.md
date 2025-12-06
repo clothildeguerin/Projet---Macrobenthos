@@ -34,23 +34,14 @@ Dans cette partie nous décrivons l'état initial des données non FAIRisées, j
 
 ### 1) Données d'entrée
 Pour répondre aux objectifs, les fichiers au format Excel (.xlsx) fournis initialement sont les suivants : 
-- pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx : Abondances et biomasses individuelles pour plus de 200 espèces (échantillonnages en mars et octobre, période 2010-2022). En voici un extrait :
-
-| taxon_compil(harm_isotopes) | Analyse en isotopie | mars-10 | Oct-10 | mars-11 | Oct-11 |
-|-----------------------------|---------------------|---------|--------|---------|--------|
-| Abra alba                   | 1                    | 11      | 30     | 22      | 62     |
-| Abra prismatica             | 1                   | 3       | 15     | 2       | 17     |
-
+- pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx : Abondances et biomasses individuelles pour plus de 200 espèces (échantillonnages en mars et octobre, période 2010-2022).
 - FC-PN-77-07_AD.xlsx : Matrice de traits fonctionnels alimentée par différents collaborateurs et partiellement complétée durant le stage. Aucun historique des modifications, des contributeurs ni des sources utilisées → traçabilité insuffisante, rendant une FAIRisation complète impossible
 - ProductivityANN01.xlsx : Macro Excel développée par Thomas Brey pour estimer la productivité des espèces (disponible en libre accès sur thomas-brey.de) 
 - SOMLIT_RoscoffEstacade_Hydro_v2023.xlsx : Données de température SOMLIT pour la station Estacade (2010-2023), transmises directement par l’encadrant. Aucun DOI n’y était associé mais elles sont bien trouvables sur SEANOE (seanoe.org, DOI 10.17882/100323) ou sur demande via somlit.fr.
 
-Des fichiers de métadonnées accompagnaient également ces données d’entrées : 
-Coding.xlsx : règles de codage des traits fonctionnels
-Taxonomy-PN-77-07.xlsx : informations taxonomiques de plus de 350 espèces, sans PID
-Mais absence de métadonnées pour les données de biomasses et abondances.
-
-
+Deux fichiers de métadonnées accompagnaient également ces données d’entrées : 
+- Coding.xlsx : règles de codage des traits fonctionnels
+- Taxonomy-PN-77-07.xlsx : informations taxonomiques de plus de 350 espèces, sans PID
 
 ### 2) Organisation de l'espace de travail
 ``` 
@@ -60,6 +51,7 @@ Mais absence de métadonnées pour les données de biomasses et abondances.
 │           └── Résultats et graphiques
 │               └── Images des graphiques
 │           └── Tableau Brey (Taxo + abiotique)
+│               └── pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx
 │               └── FC-PN-77-07-AD.xlsx
 │               └── Tableau data input Brey (ANN).xlsx
 │               └── Taxonomy-PN-77-07.xlsx
@@ -69,10 +61,10 @@ Mais absence de métadonnées pour les données de biomasses et abondances.
 │               └── PCoA Bio wthrare.R
 │               └── KruskallWalis_Boxplot.R
 ```
-Bien qu'on observe une première logique d'organisation, la structure initiale reste difficile à appréhender :  les fichiers étaient nombreux et dispersés dans plusieurs sous-dossiers. A noter que l'arborescence présentée ici ne reprend que les fichiers utilisés pour répondre aux 3 premiers objectifs du stage. De nombreux autres fichiers étaient présents - liés à l’objectif 4, à des explorations de données ou tests intermédiaires.
+Bien qu'on observe une première logique d'organisation, la structure initiale reste difficile à appréhender :  les fichiers étaient nombreux et dispersés dans plusieurs sous-dossiers. L’arborescence présentée ici ne reprend que les fichiers utilisés pour répondre aux 3 premiers objectifs du stage. De nombreux autres fichiers étaient présents (liés à l’objectif 4, à des explorations de données ou tests intermédiaires).
 
 ### 3) Description des analyses
-Bien qu’une section “matériel et méthodes” soit présentée dans le rapport, elle ne décrit pas précisément le passage des données initiales vers les analyses, rendant le processus non reproductible. De plus, aucun ReadMe n’était présent. 
+Bien qu’une section “matériel et méthodes” soit présentée dans le rapport, elle ne décrit pas précisément le passage des données initiales vers les analyses. De plus, aucun ReadMe n’était présent. 
 
 ### 4) Scripts initiaux
 Voici un exemple d'un script (["PCoA Bio withoutrare.R"](<./Scripts/Scripts_initiaux/PCoA Bio withoutrare.R>)) non FAIRisé : 
@@ -92,21 +84,21 @@ Voici un exemple d'un script (["PCoA Bio withoutrare.R"](<./Scripts/Scripts_init
 Les scripts contiennent des commentaires peu compréhensibles ainsi que des lignes de codes superflues. Également, le chargement des données n’était pas intégré car réalisé manuellement à chaque lancement des scripts. Ils ne comportent pas non plus de description initiale (objectif, auteur, date, version). Ce constat illustre la nécessité de les FAIRiser afin d’assurer leur reproductibilité. 
 
 ## II- FAIRisation 
-Dans cette deuxième partie nous indiquons des axes d'améliorations pour  FAIRiser la structure, les métadonnées et les analyses réalisées au cours du stage. Ce document est une première étape dans notre démarche pour améliorer ce travail. Une FAIRisation plus complète aurait nécessité de rédiger le ReadMe et les scripts en anglais, pour en faciliter la diffusion et la réutilisation. Par manque de temps cette étape n’a pas pu être réalisée, elle est donc simplement notifiée comme amélioration future. 
+Cette deuxième partie présente des axes d'améliorations pour FAIRiser certains aspects du stage. Ce document est une première étape dans notre démarche pour améliorer ce travail. Une FAIRisation complète aurait nécessité de rédiger le ReadMe et les scripts en anglais, pour en faciliter la diffusion. Par manque de temps cette étape n’a pas pu être réalisée, elle est donc simplement notifiée comme amélioration future. 
 
 ### 1) Ajout de métadonnées
-Deux fichiers de métadonnées au format .csv ont été créés pour accompagner le tableau de donnée initial ComptageBiomasseFaune-PierreNoire-2010-2022".csv et pour faciliter leur réutilisation :
- - ["MetadataTaxonomy-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataTaxonomy-PierreNoire-2010-2022.csv) : contient plusieurs champs taxonomiques, le nom des espèces renseigné dans le tableau initial ainsi que les noms scientifiques acceptées (mis à jour via la plateforme World Register of Marine Species https://www.marinespecies.org) et l’AphiaID associé. 
-→ Objectif : se rapprocher d’une standardisation conforme à Darwin Core
-
-Remarque : Les correspondances taxonomiques ont été obtenues via la fonction Match Taxa de WoRMS. Lorsque les noms comportaient “sp.” ou “spp.”, ceux-ci ont été retirés pour permettre l’identification du genre. Certaines correspondances étaient ambiguës ; ces cas sont indiqués dans les colonnes Match_Type et Ambiguity du fichier de métadonnées (par ex. ambiguïtés liées à des homonymes (Homonym) ou à des erreurs historiques de classification (HistoricalConfusion)._
+Deux fichiers de métadonnées au format .csv ont été créés pour accompagner le tableau de donnée initial "pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx” et pour faciliter leur réutilisation :
+ - ["MetadataTaxonomy-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataTaxonomy-PierreNoire-2010-2022.csv) : contient plusieurs champs taxonomiques, le nom des espèces renseigné dans le tableau initial ainsi que les noms scientifiques acceptées (mis à jour via la plateforme World Register of Marine Species https://www.marinespecies.org) et l’AphiaID associé. En voici un extrait :
 
 | ScientificName_Initial | AphialD | Match_type | Ambiguity | ScientificName_accepted | Authority_accepted | Kingdom | Phylum | Class | Order | Family | Genus |
 |:-----------------------|:--------|:-----------|:----------|:------------------------|:-------------------|:--------|:-------|:------|:------|:-------|:------|
-| Abra alba              | 141436  | exact      |           | Abra alba               | (W. Wood, 1802)    | Animalia| Mollusca | Bivalvia | Cardiida | Semelidae | Abra |
-| Abra prismatica        | 141436  | exact      |           | Abra prismatica         | (Montagu, 1808)    | Animalia| Mollusca | Bivalvia | Cardiida | Semelidae | Abra |
+| Prionospio malmgreni   | 131159  | exact      |           | Prionospio malmgreni    | Claparède, 1868    | Animalia| Annelida | Polychaeta | Spionida | Spionidae | Prionospio |
+| Prionospio multibranchiata | 131160 | ambiguous | HistoricalConfusion | Prionospio multibranchiata | Berkeley, 1927 | Animalia| Annelida | Polychaeta | Spionida | Spionidae | Prionospio |
 
-["MetadataSampling-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataSampling-PierreNoire-2010-2022.csv) : contient : méthode d’échantillonnage, surface échantillonnée, unité, coordonnées (latitude/longitue), PID associé au site, profondeur, opérateur (non renseigné car information manquante)
+→ Objectif : se rapprocher d’une standardisation conforme à Darwin Core
+Remarque : _Certaines correspondances étaient ambiguës ; ces cas sont indiqués dans les colonnes Match_Type et Ambiguity du fichier de métadonnées (par ex. ambiguïtés liées à des homonymes (Homonym) ou à des erreurs historiques de classification (HistoricalConfusion)._
+
+- ["MetadataSampling-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataSampling-PierreNoire-2010-2022.csv) contenant : méthode d’échantillonnage, surface échantillonnée, unité, coordonnées (latitude/longitue), PID associé au site, profondeur, opérateur (non renseigné ici car information manquante)
 → Objectif : se rapprocher du standard BENTHOBS car adapté à la nature de nos données. Une FAIRisation complète selon ce standard n’est pas possible car certaines informations et données requises n’étaient pas disponibles. 
     
 ### 2) Organisation de l'espace de travail
@@ -139,7 +131,7 @@ Suite à nos modifications, nous proposons une nouvelle organisation de l'espace
 ```    
 
 ### 3) Description des analyses 
-Tout d’abord, la majorité des étapes de préparation des données (calculs intermédiaires, nettoyage et réorganisation, pré-formatage, etc.) ont été réalisées directement dans Excel sous forme de tableaux intermédiaires. Ces opérations, non scriptées dans R, présentent une traçabilité et une reproductibilité très limitées, voire inexistantes. Par manque de temps, seuls les fichiers intermédiaires indispensables à la réalisation des analyses statistiques liées aux trois premiers objectifs du stage ont pu être FAIRisés. Cette section décrit donc, aussi clairement que possible, le cheminement des données et des scripts utilisés pour ces trois objectifs. Le quatrième objectif du stage n’est pas documenté, faute de temps.
+Tout d’abord, la majorité des étapes de préparation des données (calculs intermédiaires, nettoyage et réorganisation, pré-formatage, etc.) ont été réalisées directement dans Excel sous forme de tableaux intermédiaires. Ces opérations, non scriptées dans R, présentent une traçabilité et une reproductibilité très limitées. Par manque de temps, seuls les fichiers intermédiaires indispensables à la réalisation des analyses statistiques liées aux trois premiers objectifs du stage ont pu être FAIRisés. Cette section décrit donc, aussi clairement que possible, le cheminement des données et des scripts utilisés pour ces trois objectifs. Le quatrième objectif du stage n’est pas documenté, faute de temps.
 
 #### Objectif 1 : Compléter les suivis de la communauté macrobenthique de Pierre Noire via l'estimation de la production secondaire
 
