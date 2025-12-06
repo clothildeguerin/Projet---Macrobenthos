@@ -86,7 +86,7 @@ Cette deuxième partie présente des axes d'amélioration pour FAIRiser certains
 
 ### 1) Ajout de métadonnées
 Deux fichiers de métadonnées au format .csv ont été créés pour accompagner le tableau de données initial "pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx” et pour faciliter leur réutilisation :
- -  [MetadataTaxonomy_PierreNoire_2010-2022.csv](./Metadata/Metadata_BiomassAbundance/MetadataTaxonomy_PierreNoire_2010-2022.csv) : contient plusieurs champs taxonomiques, le nom des espèces renseigné dans le tableau initial ainsi que les noms scientifiques acceptés (mis à jour via la plateforme World Register of Marine Species https://www.marinespecies.org) et l’AphiaID associé. En voici un extrait :
+ -  [MetadataTaxonomy_PierreNoire_2010-2022.csv](./Inputs/Metadata/Metadata_BiomassAbundance/MetadataTaxonomy_PierreNoire_2010-2022.csv) : contient plusieurs champs taxonomiques, le nom des espèces renseigné dans le tableau initial ainsi que les noms scientifiques acceptés (mis à jour via la plateforme World Register of Marine Species https://www.marinespecies.org) et l’AphiaID associé. En voici un extrait :
 
 | ScientificName_Initial | AphialD | Match_type | Ambiguity | ScientificName_accepted | Authority_accepted | Kingdom | Phylum | Class | Order | Family | Genus |
 |:-----------------------|:--------|:-----------|:----------|:------------------------|:-------------------|:--------|:-------|:------|:------|:-------|:------|
@@ -97,7 +97,7 @@ Deux fichiers de métadonnées au format .csv ont été créés pour accompagner
 
 Remarque : _Certaines correspondances étaient ambiguës ; ces cas sont indiqués dans les colonnes Match_Type et Ambiguity du fichier de métadonnées (par ex. ambiguïtés liées à des homonymes (Homonym) ou à des erreurs historiques de classification (HistoricalConfusion)._
 
--  [MetadataSampling_PierreNoire_2010-2022.csv](./Metadata/Metadata_BiomassAbundance/MetadataSampling_PierreNoire_2010-2022.csv) contenant : méthode d’échantillonnage, surface échantillonnée, unité, coordonnées (latitude/longitude), PID associé au site, profondeur, opérateur (non renseigné ici car information manquante)
+-  [MetadataSampling_PierreNoire_2010-2022.csv](./Inputs/Metadata/Metadata_BiomassAbundance/MetadataSampling_PierreNoire_2010-2022.csv) contenant : méthode d’échantillonnage, surface échantillonnée, unité, coordonnées (latitude/longitude), PID associé au site, profondeur, opérateur (non renseigné ici car information manquante)
 
 → Objectif : se rapprocher du standard BENTHOBS car adapté à la nature de nos données. Une FAIRisation complète selon ce standard n’est pas possible car certaines informations et données requises n’étaient pas disponibles. 
     
@@ -139,7 +139,7 @@ Tout d’abord, la majorité des étapes de préparation des données (calculs i
 A partir du fichier initial BiomassAbundance_PierreNoire_2010-2022.csv, la biomasse moyenne annuelle de chaque espèce a été calculée comme la moyenne des biomasses mesurées en octobre et en mars pour chaque année.
 
 ##### Etape 2 : Calcul de la productivité
-La productivité annuelle de chaque espèce a été estimée à l'aide de la macro Excel développée par Brey ([BreyProductivity_MacroExcel.xlsx](./Tool/BreyProductivity_MacroExcel.xlsx)), qui calcule automatiquement la productivité à partir d’un ensemble de variables écologiques et environnementales renseignées manuellement. Les données que l'on renseigne dans ce fichier sont : 
+La productivité annuelle de chaque espèce a été estimée à l'aide de la macro Excel développée par Brey ([BreyProductivity_MacroExcel.xlsx](./Inputs/Tool/BreyProductivity_MacroExcel.xlsx)), qui calcule automatiquement la productivité à partir d’un ensemble de variables écologiques et environnementales renseignées manuellement. Les données que l'on renseigne dans ce fichier sont : 
 - La température moyenne annuelle : calculée pour chaque année à partir des données [SOMLIT_RoscoffEstacade_1997-2023.csv](./Inputs/InitialData/SOMLIT_RoscoffEstacade_1997-2023.csv) (entre 2010 et 2023 pour ce stage).
 - Les modalités de plusieurs traits fonctionnels : renseignées à partir de la matrice de traits fonctionnels FunctionalTraitsMatrix.csv
 
