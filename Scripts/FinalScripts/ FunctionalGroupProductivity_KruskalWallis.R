@@ -3,7 +3,7 @@
 #               entre les différents groupes trophiques identifiés,
 #               sur l'ensemble de la période étudiée (2010-2022). 
 # Nom : FunctionalGroupProductivity_KruskalWallis.R
-# Auteur : Clothilde GUERIN (ORCID à ajouter mais encore pas créé)
+# Auteur : Clothilde GUERIN 
 # Date : 3 Décembre 2025
 
 #### Session info

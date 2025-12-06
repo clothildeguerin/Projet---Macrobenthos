@@ -2,7 +2,7 @@
 # Description : Analyse PCOA - Comparaison des données annuelles 
 #               de biomasse (sans espèces rares)
 # Nom : BiomassWithoutRareSpecies_PCoA.R
-# Auteur : Clothilde GUERIN (ORCID à ajouter mais encore pas créé)
+# Auteur : Clothilde GUERIN
 # Date : 3 Décembre 2025
 
 #### Session info : 
@@ -31,11 +31,11 @@
 # tzcode source: system (glibc)
 # 
 # attached base packages:
-#   [1] stats     graphics  grDevices utils     datasets 
+# [1] stats     graphics  grDevices utils     datasets 
 # [6] methods   base     
 # 
 # other attached packages:
-#   [1] ggrepel_0.9.5    ggforce_0.4.2    gridExtra_2.3   
+# [1] ggrepel_0.9.5    ggforce_0.4.2    gridExtra_2.3   
 # [4] cowplot_1.1.3    writexl_1.5.0    glue_1.7.0      
 # [7] broom_1.0.6      pls_2.8-5        ape_5.8         
 # [10] plyr_1.8.9       lubridate_1.9.3  forcats_1.0.0   
@@ -46,7 +46,7 @@
 # [25] lattice_0.22-6   permute_0.9-7    FSA_0.10.0      
 # 
 # loaded via a namespace (and not attached):
-#   [1] gtable_0.3.5         htmlwidgets_1.6.4   
+# [1] gtable_0.3.5         htmlwidgets_1.6.4   
 # [3] tzdb_0.4.0           vctrs_0.6.5         
 # [5] tools_4.3.1          generics_0.1.3      
 # [7] parallel_4.3.1       sandwich_3.1-0      
