@@ -168,7 +168,8 @@ A partir des informations issues de la matrice de traits fonctionnels, attributi
 Création d’un tableau intermédiaire (KruskallWallis_Boxplot_Productivity.csv) regroupant, pour chaque groupe trophique, les valeurs de productivité obtenues précédemment
 
 ##### Etape 3 : Analyse statistique 
-Test de Kruskal - Wallis à partir du fichier KruskallWallis_Boxplot_Productivity.csv  → script [FunctionalGroupProductivity_KruskalWallis](./Scripts/FinalScripts/ FunctionalGroupProductivity_KruskalWallis) 
+Test de Kruskal - Wallis à partir du fichier KruskallWallis_Boxplot_Productivity.csv  → script [FunctionalGroupProductivity_KruskalWallis.R](./Scripts/FinalScripts/ FunctionalGroupProductivity_KruskalWallis.R) 
+
 ##### Etape 4 : Résultat de l’analyse → ResultsKruskalWallis.jpeg
 
 ### 4) Fairisation des scripts
@@ -194,7 +195,9 @@ Le script initial [PCoA Bio wthrare.R](<./Scripts/InitialScripts/PCoA Bio wthrar
 . . .
 115 # On calcule une matrice de distance de Bray-Curtis à partir des données de biomasse
 ```
-Ainsi, ont été ajoutés : une bannière structurée (nom complet, description, auteur, date et version), un chargement explicite des données, des commentaires plus détaillés et une organisation plus claire. 
+De même pour [KruskallWallis_boxplot.R](./Scripts/InitialScripts/ KruskallWallis_boxplot.R) qui a été révisé selon la même logique en [FunctionalGroupProductivity_KruskalWallis.R](./Scripts/FinalScripts/ FunctionalGroupProductivity_KruskalWallis.R).
+
+Ainsi, ont été ajoutés pour ces deux scripts : une bannière structurée (nom complet, description, auteur, date et version), un chargement explicite des données, des commentaires plus détaillés et une organisation plus claire. 
 
 ## Conclusion
 Ce travail de FAIRisation a permis d’améliorer l’organisation et la traçabilité d’une partie des données et analyses réalisées au cours de ce projet. Bien que certaines améliorations n’aient pas pu être finalisées, les corrections menées constituent une base solide pour assurer la réutilisation et la reproductibilité des analyses et résultats. Ce travail pourra ainsi servir de point de départ pour poursuivre les améliorations proposées, prolonger les analyses existantes ou bien pour étendre cette démarche FAIR à d’autres jeux de données. 
