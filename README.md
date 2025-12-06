@@ -34,20 +34,20 @@ Dans cette partie nous décrivons l'état initial des données non FAIRisées, j
 
 ### 1) Données d'entrée
 Pour répondre aux objectifs, les fichiers au format Excel (.xlsx) fournis initialement sont les suivants : 
-- pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx : Abondances et biomasses individuelles pour plus de 200 espèces (échantillonnages en mars et octobre, période 2010-2022)
+- pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx : Abondances et biomasses individuelles pour plus de 200 espèces (échantillonnages en mars et octobre, période 2010-2022). En voici un extrait :
+```
+| taxon_compil(harm_isotopes) | Analyse en isotopie | mars-10 | Oct-10 | mars-11 | Oct-11 | | :-------------------------- | :------------------ | :------ | :----- | :------ | :----- | | Abra alba | | 11 | 30 | 22 | 62 | | Abra prismatica | | 3 | 15 | 2 | 17 |
+```
 - FC-PN-77-07_AD.xlsx : Matrice de traits fonctionnels alimentée par différents collaborateurs et partiellement complétée durant le stage. Aucun historique des modifications, des contributeurs ni des sources utilisées → traçabilité insuffisante, rendant une FAIRisation complète impossible
 - ProductivityANN01.xlsx : Macro Excel développée par Thomas Brey pour estimer la productivité des espèces (disponible en libre accès sur thomas-brey.de) 
 - SOMLIT_RoscoffEstacade_Hydro_v2023.xlsx : Données de température SOMLIT pour la station Estacade (2010-2023), transmises directement par l’encadrant. Aucun DOI n’y était associé mais elles sont bien trouvables sur SEANOE (seanoe.org, DOI 10.17882/100323) ou sur demande via somlit.fr.
+
 Des fichiers de métadonnées accompagnaient également ces données d’entrées : 
 Coding.xlsx : règles de codage des traits fonctionnels
 Taxonomy-PN-77-07.xlsx : informations taxonomiques de plus de 350 espèces, sans PID
 Mais absence de métadonnées pour les données de biomasses et abondances.
 
-Exemple : 
-```
-biomasse	machin
-345		234	
-```
+
 
 ### 2) Organisation de l'espace de travail
 ``` 
@@ -61,6 +61,7 @@ biomasse	machin
 │               └── Tableau data input Brey (ANN).xlsx
 │               └── Taxonomy-PN-77-07.xlsx
 │               └── Coding.xlsx
+│               └── SOMLIT_RoscoffEstacade_Hydro_v2023.xlsx
 │           └── Fichiers et scripts PCoA ACP R
 │               └── PCoA Bio wthrare.R
 │               └── KruskallWalis_Boxplot.R
@@ -96,7 +97,7 @@ Deux fichiers de métadonnées au format .csv ont été créés pour accompagner
  - ["MetadataTaxonomy-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataTaxonomy-PierreNoire-2010-2022.csv) : contient plusieurs champs taxonomiques, le nom des espèces renseigné dans le tableau initial ainsi que les noms scientifiques acceptées (mis à jour via la plateforme World Register of Marine Species https://www.marinespecies.org) et l’AphiaID associé. 
 → Objectif : se rapprocher d’une standardisation conforme à Darwin Core
 
-Remarque : _Les correspondances taxonomiques ont été obtenues via la fonction Match Taxa de WoRMS. Lorsque les noms comportaient “sp.” ou “spp.”, ceux-ci ont été retirés pour permettre l’identification du genre. Certaines correspondances étaient ambiguës ; ces cas sont indiqués dans les colonnes Match_Type et Ambiguity du fichier de métadonnées (par ex. ambiguïtés liées à des homonymes (Homonym) ou à des erreurs historiques de classification (HistoricalConfusion)._
+Remarque : Les correspondances taxonomiques ont été obtenues via la fonction Match Taxa de WoRMS. Lorsque les noms comportaient “sp.” ou “spp.”, ceux-ci ont été retirés pour permettre l’identification du genre. Certaines correspondances étaient ambiguës ; ces cas sont indiqués dans les colonnes Match_Type et Ambiguity du fichier de métadonnées (par ex. ambiguïtés liées à des homonymes (Homonym) ou à des erreurs historiques de classification (HistoricalConfusion)._
 
 Ajouter exemple métadata
 
@@ -104,13 +105,14 @@ Ajouter exemple métadata
 → Objectif : se rapprocher du standard BENTHOBS car adapté à la nature de nos données. Une FAIRisation complète selon ce standard n’est pas possible car certaines informations et données requises n’étaient pas disponibles. 
     
 ### 2) Organisation de l'espace de travail
-Suite à nos modifications, nous proposons une nouvelle organisation de l'espace de travail, également associée à une correction des noms des fichiers pour les rendre plus compréhensibles :
+Suite à nos modifications, nous proposons une nouvelle organisation de l'espace de travail, associée à une correction des noms des fichiers pour les rendre plus compréhensibles :
 ```
 ├──Projet—Macrobenthos
 │ └── Inputs
 │     └── InitialData
 │         └── FunctionalTraitsMatrix.csv
 │         └── BiomassAbundance_PierreNoire_2010-2022.csv
+│         └── SOMLIT_RoscoffEstacade_2010-2023.csv
 │     └── Tools
 │         └── BreyProductivity_MacroExcel.xlsx
 │     └── Metadata
@@ -132,8 +134,7 @@ Suite à nos modifications, nous proposons une nouvelle organisation de l'espace
 ```    
 
 ### 3) Description des analyses 
-Tout d’abord, la majorité des étapes de préparation des données (calculs intermédiaires, nettoyage et réorganisation, pré-formatage, etc.) a été réalisée directement dans Excel sous forme de tableaux intermédiaires. Ces opérations, non scriptées dans R, présentent une traçabilité et une reproductibilité très limitées, voire inexistantes. Par manque de temps, nous n’avons pas pu tous les FAIRiser. Nous nous sommes focalisés uniquement sur les fichiers intermédiaires indispensables à la réalisation des analyses statistiques liées aux trois premiers objectifs du stage.
-Il reste essentiel de décrire le plus clairement possible le cheminement du stage. Ainsi, cette partie vise à décrire le plus clairement possible l’usage des données initiales, des données intermédiaires et scripts permettant de répondre aux trois premiers objectifs du stage. Le 4ème objectif n’est pas traité par contrainte de temps. 
+Tout d’abord, la majorité des étapes de préparation des données (calculs intermédiaires, nettoyage et réorganisation, pré-formatage, etc.) ont été réalisées directement dans Excel sous forme de tableaux intermédiaires. Ces opérations, non scriptées dans R, présentent une traçabilité et une reproductibilité très limitées, voire inexistantes. Par manque de temps, seuls les fichiers intermédiaires indispensables à la réalisation des analyses statistiques liées aux trois premiers objectifs du stage ont pu être FAIRisés. Cette section décrit donc, aussi clairement que possible, le cheminement des données et des scripts utilisés pour ces trois objectifs. Le quatrième objectif du stage n’est pas documenté, faute de temps.
 
 #### Objectif 1 : Compléter les suivis de la communauté macrobenthique de Pierre Noire via l'estimation de la production secondaire
 
@@ -141,14 +142,15 @@ Il reste essentiel de décrire le plus clairement possible le cheminement du sta
 A partir du fichier initial  Macrofauna-PierreNoire-2010-2022.csv, la biomasse moyenne annuelle de chaque espèce a été calculée comme la moyenne des biomasses mesurées en octobre et en mars pour chaque année.
 
 ##### Etape 2 : Calcul de la productivité
-La productivité annuelle de chaque espèce a été estimée à l'aide de la macro Excel développée par Brey, qui calcule automatiquement la productivité à partir d’un ensemble de variables écologiques et environnementales renseignées manuellement. Elle nécessite notamment : 
-La température moyenne annuelle : calculée pour chaque année à partir des données SOMLIT (Station Estacade, 2010-2023), accessibles en libre accès sur SEANOE (seanoe.org, DOI 10.17882/100323)
-Des traits fonctionnels : renseignés à partir de la matrice de trait fonctionnels FunctionalTraitsMatrix.csv 
+La productivité annuelle de chaque espèce a été estimée à l'aide de la macro Excel développée par Brey, qui calcule automatiquement la productivité à partir d’un ensemble de variables écologiques et environnementales renseignées manuellement. Les données que l'on renseigne dans ce fichier sont : 
+- La température moyenne annuelle : calculée pour chaque année à partir des données SOMLIT_RoscoffEstacade_2010-2023.csv (Station Estacade, 2010-2023) 
+- Les modalités de plusieurs traits fonctionnels : renseignés à partir de la matrice de trait fonctionnels FunctionalTraitsMatrix.csv 
+
 Remarque : _Comme cette macro demande un fichier d’entrée avec un format et une structure précise, un tableau intermédiaire a été construit durant le stage. Celui-ci renseigne, pour chaque espèce, l’ensemble des variables attendues par la macro, ce qui nous permet de remplir automatiquement le fichier excel sans avoir à saisir manuellement chaque ligne. _
 
 #### Etape 3 : Calcul de la production secondaire
-La production secondaire annuelle pour chaque espèce a été calculée dans un fichier intermédiaire selon la formule  :
-→ Production = Productivité*Biomasse moyenne annuelle. 
+La production secondaire annuelle pour chaque espèce a été calculée dans un fichier intermédiaire selon la formule :
+- Production = Productivité*Biomasse moyenne annuelle. 
 La productivité provient des résultats obtenus via la macro Excel de Brey. La biomasse moyenne annuelle provient des calculs réalisés à partir du fichier de données initial (cf. Etape 1)
 
 #### Objectif 2 : Mettre en évidence la relation entre les variations interannuelles de production secondaire et les changements de structure de la communauté 
@@ -172,35 +174,15 @@ Création d’un tableau regroupant les valeurs de productivité (issues de la m
 ##### Etape 3 : Analyse statistique 
 Test de Kruskal - Wallis à partir du fichier KruskallWallis_Boxplot_Productivity.csv  → script FunctionalGroupProductivity_KruskallWallis.R
 
-##### Etape 4 : Résultat de l’analyse → “.jpeg” 
+##### Etape 4 : Résultat de l’analyse → “ResultsKruskalWallis.jpeg” 
 
 ### 4) Fairisation des scripts
 
 Le script initial ["PCoA Bio withoutrare.R"](./Scripts/Scripts_initiaux/PCoA Bio withoutrare.R) à été révisé et amélioré en ["PCoA_BiomassWithoutRareSpecies.R"](./Scripts/Scripts_finaux/PCoA_BiomassWithoutRareSpecies.R) comme suit : 
 ```
-########################################################
-# Description : Analyse PCOA - Données annuelles de biomasse (sans espèces rares)
-# Nom : PCoA_BiomassWithoutRareSpecies.R
-# Auteur : Clothilde GUERIN (PID = ...)
-# Date : 3 Décembre 2025
-########################################################
-
-##### Chargement des données ####
-PCoA_Bio_WithoutRareSpecies <- read.csv("data/PCoA_Bio_WithoutRareSpecies.csv")
-
-##### Chargement de la librairie ####
-library(vegan) #PCoA et distance de Bray-Curtis
-...
-library(ggrepel) #empêche les étiquettes de se chevaucher
-
-#### Mise en forme du jeu de donnée ####
-
-# La colonne "année" doit être officialisée car elle n'est pas correctement définie dans le dataset d'origine
-head(PCoA_Bio_WithoutRareSpecies)
-rownames(PCoA_Bio_WithoutRareSpecies)
 ...
 ```
-Ainsi, ont été ajoutés : une bannière structurée (nom complet, description, auteur, date et version), un chargement explicite des données ainsi que des commentaires plus détaillés et une organisation plus claire. En revanche, certains éléments n’ont pas pu être intégrés par contrainte de temps, notamment la traduction complète du script en anglais (diffusion internationale) et la mention des versions des packages utilisés. 
+Ainsi, ont été ajoutés : une bannière structurée (nom complet, description, auteur, date et version), un chargement explicite des données ainsi que des commentaires plus détaillés et une organisation plus claire. En revanche, la traduction complète du script en anglais (diffusion internationale) n’a pas pu être faite par manque de temps.
 
 ## Conclusion
 Ce travail de FAIRisation a permis d’améliorer l’organisation et la traçabilité d’une partie des données et analyses réalisées au cours de ce projet. Bien que certaines améliorations n’aient pas pu être finalisées, les corrections menées constituent une base solide pour assurer la réutilisation et la reproductibilité des analyses et résultats. Ce travail pourra ainsi servir de point de départ pour poursuivre les améliorations proposées, prolonger les analyses existantes ou bien pour étendre cette démarche FAIR à d’autres jeux de données. 
