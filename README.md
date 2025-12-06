@@ -38,8 +38,8 @@ Pour répondre aux objectifs, les fichiers au format Excel (.xlsx) fournis initi
 
 | taxon_compil(harm_isotopes) | Analyse en isotopie | mars-10 | Oct-10 | mars-11 | Oct-11 |
 |-----------------------------|---------------------|---------|--------|---------|--------|
-| Abra alba                   |                     | 11      | 30     | 22      | 62     |
-| Abra prismatica             |                     | 3       | 15     | 2       | 17     |
+| Abra alba                   | 1                    | 11      | 30     | 22      | 62     |
+| Abra prismatica             | 1                   | 3       | 15     | 2       | 17     |
 
 - FC-PN-77-07_AD.xlsx : Matrice de traits fonctionnels alimentée par différents collaborateurs et partiellement complétée durant le stage. Aucun historique des modifications, des contributeurs ni des sources utilisées → traçabilité insuffisante, rendant une FAIRisation complète impossible
 - ProductivityANN01.xlsx : Macro Excel développée par Thomas Brey pour estimer la productivité des espèces (disponible en libre accès sur thomas-brey.de) 
@@ -78,17 +78,16 @@ Bien qu’une section “matériel et méthodes” soit présentée dans le rapp
 Voici un exemple d'un script (["PCoA Bio withoutrare.R"](<./Scripts/Scripts_initiaux/PCoA Bio withoutrare.R>)) non FAIRisé : 
 
 ```
-LOLA AJOUTE NUMEROS LIGNES STP
 1 library(vegan)
-... 
-9 library("writexl")
-
-# j'officialise la colonne année dans pas PCoA
-head(PCoA_Bio_wthrare)
-rownames(PCoA_Bio_wthrare)
-...
-# je tente un truc pour les espèces qui contribuent le +
-...
+. . . 
+12 library("writexl")
+13
+14 # j'officialise la colonne année dans pas PCoA
+15 head(PCoA_Bio_wthrare)
+16 rownames(PCoA_Bio_wthrare)
+. . .
+117 # je tente un truc pour les espèces qui contribuent le +
+. . .
 ```
 Les scripts contiennent des commentaires peu compréhensibles ainsi que des lignes de codes superflues. Également, le chargement des données n’était pas intégré car réalisé manuellement à chaque lancement des scripts. Ils ne comportent pas non plus de description initiale (objectif, auteur, date, version). Ce constat illustre la nécessité de les FAIRiser afin d’assurer leur reproductibilité. 
 
@@ -102,7 +101,10 @@ Deux fichiers de métadonnées au format .csv ont été créés pour accompagner
 
 Remarque : Les correspondances taxonomiques ont été obtenues via la fonction Match Taxa de WoRMS. Lorsque les noms comportaient “sp.” ou “spp.”, ceux-ci ont été retirés pour permettre l’identification du genre. Certaines correspondances étaient ambiguës ; ces cas sont indiqués dans les colonnes Match_Type et Ambiguity du fichier de métadonnées (par ex. ambiguïtés liées à des homonymes (Homonym) ou à des erreurs historiques de classification (HistoricalConfusion)._
 
-Ajouter exemple métadata
+| ScientificName_Initial | AphialD | Match_type | Ambiguity | ScientificName_accepted | Authority_accepted | Kingdom | Phylum | Class | Order | Family | Genus |
+|:-----------------------|:--------|:-----------|:----------|:------------------------|:-------------------|:--------|:-------|:------|:------|:-------|:------|
+| Abra alba              | 141436  | exact      |           | Abra alba               | (W. Wood, 1802)    | Animalia| Mollusca | Bivalvia | Cardiida | Semelidae | Abra |
+| Abra prismatica        | 141436  | exact      |           | Abra prismatica         | (Montagu, 1808)    | Animalia| Mollusca | Bivalvia | Cardiida | Semelidae | Abra |
 
 ["MetadataSampling-PierreNoire-2010-2022.csv"](./Metadonnées/MetadataSampling-PierreNoire-2010-2022.csv) : contient : méthode d’échantillonnage, surface échantillonnée, unité, coordonnées (latitude/longitue), PID associé au site, profondeur, opérateur (non renseigné car information manquante)
 → Objectif : se rapprocher du standard BENTHOBS car adapté à la nature de nos données. Une FAIRisation complète selon ce standard n’est pas possible car certaines informations et données requises n’étaient pas disponibles. 
@@ -149,7 +151,7 @@ La productivité annuelle de chaque espèce a été estimée à l'aide de la mac
 - La température moyenne annuelle : calculée pour chaque année à partir des données SOMLIT_RoscoffEstacade_2010-2023.csv (Station Estacade, 2010-2023) 
 - Les modalités de plusieurs traits fonctionnels : renseignés à partir de la matrice de trait fonctionnels FunctionalTraitsMatrix.csv 
 
-Remarque : _Comme cette macro demande un fichier d’entrée avec un format et une structure précise, un tableau intermédiaire a été construit durant le stage. Celui-ci renseigne, pour chaque espèce, l’ensemble des variables attendues par la macro, ce qui nous permet de remplir automatiquement le fichier excel sans avoir à saisir manuellement chaque ligne. _
+Remarque : _ Comme cette macro demande un fichier d’entrée avec un format et une structure précise, un tableau intermédiaire a été construit durant le stage. Celui-ci renseigne, pour chaque espèce, l’ensemble des variables attendues par la macro, ce qui nous permet de remplir automatiquement le fichier excel sans avoir à saisir manuellement chaque ligne. _
 
 #### Etape 3 : Calcul de la production secondaire
 La production secondaire annuelle pour chaque espèce a été calculée dans un fichier intermédiaire selon la formule :
@@ -158,20 +160,20 @@ La production secondaire annuelle pour chaque espèce a été calculée dans un 
 #### Objectif 2 : Mettre en évidence la relation entre les variations interannuelles de production secondaire et les changements de structure de la communauté 
 
 ##### Etape 1 : Préparation des données 
-Production d’un tableau contenant les biomasses moyennes annuelles des espèces, après exclusion des espèces rares  → fichier intermédiaire BiomassWithoutRareSpecies_PCoA.csv
+Production d’un tableau intermédiaire (BiomassWithoutRareSpecies_PCoA.csv) contenant les biomasses moyennes annuelles des espèces, après exclusion des espèces rares
 
 ##### Etape 2 : Analyse multivariée (PCoA)
 Réalisation d’une PCoA à partir du fichier BiomassWithoutRareSpecies_PCoA.csv → script BiomassWithoutRareSpecies_PCoA.R
 
-##### Etape 3 : Obtention des résultat de l’analyse → “..jpeg” 
+##### Etape 3 : Obtention des résultat de l’analyse → “ResultsBiomassWithoutRareSpecies_PCoA.jpeg” 
 
 #### Objectif 3 : Comparer les niveaux de productivité entre groupes trophiques 
 
 ##### Etape 1 : Attribution des groupes trophiques aux espèces
-A partir des informations issues de la matrice de traits fonctionnels, attribution de chaque espèce à l’un des groupes trophiques prédéfini (prédateurs, déposivores de surface ou de sub-surface, suspensivores)
+A partir des informations issues de la matrice de traits fonctionnels, attribution de chaque espèce à l’un des groupes trophiques défini (prédateurs, déposivores de surface ou de sub-surface, suspensivores)
 
 ##### Etape 2 : Préparation des données
-Création d’un tableau regroupant les valeurs de productivité (issues de la macro excel de Brey) pour chaque groupe trophique → fichier intermédiaire KruskallWallis_Boxplot_Productivity.csv 
+Création d’un tableau intermédiaire (KruskallWallis_Boxplot_Productivity.csv) regroupant, pour chaque groupe trophique, les valeurs de productivité obtenues précédemment
 
 ##### Etape 3 : Analyse statistique 
 Test de Kruskal - Wallis à partir du fichier KruskallWallis_Boxplot_Productivity.csv  → script FunctionalGroupProductivity_KruskallWallis.R
@@ -182,9 +184,26 @@ Test de Kruskal - Wallis à partir du fichier KruskallWallis_Boxplot_Productivit
 
 Le script initial ["PCoA Bio withoutrare.R"](./Scripts/Scripts_initiaux/PCoA Bio withoutrare.R) à été révisé et amélioré en ["PCoA_BiomassWithoutRareSpecies.R"](./Scripts/Scripts_finaux/PCoA_BiomassWithoutRareSpecies.R) comme suit : 
 ```
-...
+1 ########################################################
+2 # Description : Analyse PCOA - Comparaison des données annuelles 
+3 #               de biomasse (sans espèces rares)
+4 # Nom : BiomassWithoutRareSpecies_PCoA.R
+5 # Auteur : Clothilde GUERIN (ORCID à ajouter mais encore pas créé)
+6 # Date : 3 Décembre 2025
+7 
+8 #### Session info : 
+9 # R version 4.3.1 (2023-06-16)
+. . .
+44 [19] tidyverse_2.0.0
+. . .
+78 ########################################################
+79 
+80 ##### Chargement des données ####
+81 PCoA_Bio_WithoutRareSpecies <- read.csv("Data/DataBiomassWithoutRareSpecies_PCoA.csv")
+. . .
+115 # On calcule une matrice de distance de Bray-Curtis à partir des données de biomasse
 ```
-Ainsi, ont été ajoutés : une bannière structurée (nom complet, description, auteur, date et version), un chargement explicite des données ainsi que des commentaires plus détaillés et une organisation plus claire. En revanche, la traduction complète du script en anglais (diffusion internationale) n’a pas pu être faite par manque de temps.
+Ainsi, ont été ajoutés : une bannière structurée (nom complet, description, auteur, date et version), un chargement explicite des données, des commentaires plus détaillés et une organisation plus claire. 
 
 ## Conclusion
 Ce travail de FAIRisation a permis d’améliorer l’organisation et la traçabilité d’une partie des données et analyses réalisées au cours de ce projet. Bien que certaines améliorations n’aient pas pu être finalisées, les corrections menées constituent une base solide pour assurer la réutilisation et la reproductibilité des analyses et résultats. Ce travail pourra ainsi servir de point de départ pour poursuivre les améliorations proposées, prolonger les analyses existantes ou bien pour étendre cette démarche FAIR à d’autres jeux de données. 
