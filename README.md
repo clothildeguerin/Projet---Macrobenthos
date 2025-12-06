@@ -36,7 +36,10 @@ Dans cette partie nous décrivons l'état initial des données non FAIRisées, j
 Pour répondre aux objectifs, les fichiers au format Excel (.xlsx) fournis initialement sont les suivants : 
 - pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx : Abondances et biomasses individuelles pour plus de 200 espèces (échantillonnages en mars et octobre, période 2010-2022). En voici un extrait :
 ```
-| taxon_compil(harm_isotopes) | Analyse en isotopie | mars-10 | Oct-10 | mars-11 | Oct-11 | | :-------------------------- | :------------------ | :------ | :----- | :------ | :----- | | Abra alba | | 11 | 30 | 22 | 62 | | Abra prismatica | | 3 | 15 | 2 | 17 |
+| taxon_compil(harm_isotopes) | Analyse en isotopie | mars-10 | Oct-10 | mars-11 | Oct-11 |
+|-----------------------------|---------------------|---------|--------|---------|--------|
+| Abra alba                   |                     | 11      | 30     | 22      | 62     |
+| Abra prismatica             |                     | 3       | 15     | 2       | 17     |
 ```
 - FC-PN-77-07_AD.xlsx : Matrice de traits fonctionnels alimentée par différents collaborateurs et partiellement complétée durant le stage. Aucun historique des modifications, des contributeurs ni des sources utilisées → traçabilité insuffisante, rendant une FAIRisation complète impossible
 - ProductivityANN01.xlsx : Macro Excel développée par Thomas Brey pour estimer la productivité des espèces (disponible en libre accès sur thomas-brey.de) 
@@ -150,8 +153,7 @@ Remarque : _Comme cette macro demande un fichier d’entrée avec un format et u
 
 #### Etape 3 : Calcul de la production secondaire
 La production secondaire annuelle pour chaque espèce a été calculée dans un fichier intermédiaire selon la formule :
-- Production = Productivité*Biomasse moyenne annuelle. 
-La productivité provient des résultats obtenus via la macro Excel de Brey. La biomasse moyenne annuelle provient des calculs réalisés à partir du fichier de données initial (cf. Etape 1)
+- Production = Biomasse moyenne annuelle (cf. Etape 1)*Productivité (cf. Etape 2)
 
 #### Objectif 2 : Mettre en évidence la relation entre les variations interannuelles de production secondaire et les changements de structure de la communauté 
 
