@@ -195,7 +195,7 @@ Le script initial [PCoA Bio wthrare.R](<./Scripts/InitialScripts/PCoA Bio wthrar
 . . .
 115 # On calcule une matrice de distance de Bray-Curtis à partir des données de biomasse
 ```
-De même pour [KruskallWallis_boxplot.R](./Scripts/InitialScripts/ KruskallWallis_boxplot.R) qui a été révisé selon la même logique en [FunctionalGroupProductivity_KruskalWallis.R](./Scripts/FinalScripts/ FunctionalGroupProductivity_KruskalWallis.R).
+De même pour [KruskallWallis_boxplot.R](./Scripts/InitialScripts/KruskallWallis_boxplot.R) qui a été révisé selon la même logique en [FunctionalGroupProductivity_KruskalWallis.R](./Scripts/FinalScripts/FunctionalGroupProductivity_KruskalWallis.R).
 
 Ainsi, ont été ajoutés pour ces deux scripts : une bannière structurée (nom complet, description, auteur, date et version), un chargement explicite des données, des commentaires plus détaillés et une organisation plus claire. 
 
