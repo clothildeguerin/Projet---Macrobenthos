@@ -103,6 +103,7 @@ Remarque : _Certaines correspondances étaient ambiguës ; ces cas sont indiqué
     
 ### 2) Organisation de l'espace de travail
 Suite à nos modifications, nous proposons une nouvelle organisation de l'espace de travail, associée à une correction des noms des fichiers pour les rendre plus compréhensibles :
+
 ```
 ├──Projet—Macrobenthos
 │ └── Inputs
@@ -113,21 +114,21 @@ Suite à nos modifications, nous proposons une nouvelle organisation de l'espace
 │     └── Tools
 │         └── BreyProductivity_MacroExcel.xlsx
 │     └── Metadata
-│              └── Metadata_BiomassAbundance
-│                      └── MetadataTaxonomy_PierreNoire_2010-2022.csv
-│                      └── MetadataSampling_PierreNoire_2010-2022.csv
-│              └── Metadata_FunctionalTraitsMatrix
-│                      └── Metadata_CodingFunctionalTraits.csv
+│         └── Metadata_BiomassAbundance
+│             └── MetadataTaxonomy_PierreNoire_2010-2022.csv
+│             └── MetadataSampling_PierreNoire_2010-2022.csv
+│         └── Metadata_FunctionalTraitsMatrix
+│             └── Metadata_CodingFunctionalTraits.csv
 │ └── Scripts
 │     └── BiomassWithoutRareSpecies_PCoA.R
 │     └── FunctionalGroupProductivity_KruskalWallis.R
 │ └── Output  
-│         └── IntermediateData
-│                 └── DataFunctionalGroupProductivity_KruskalWallis.csv
-│                 └── DataBiomassWithoutRareSpecies_PCoA.csv
-│         └── Results
-│                 └── ResultsBiomassWithoutRareSpecies_PCoA.jpeg
-│                 └── ResultsKruskalWallis.jpeg
+│     └── IntermediateData
+│         └── DataFunctionalGroupProductivity_KruskalWallis.csv
+│         └── DataBiomassWithoutRareSpecies_PCoA.csv
+│     └── Results
+│         └── ResultsBiomassWithoutRareSpecies_PCoA.jpeg
+│         └── ResultsKruskalWallis.jpeg
 ```    
 
 ### 3) Description des analyses 
