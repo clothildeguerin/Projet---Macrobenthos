@@ -35,7 +35,8 @@ Pour répondre aux objectifs, les fichiers au format Excel (.xlsx) fournis initi
 - pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx : Abondances et biomasses individuelles pour plus de 200 espèces (échantillonnages en mars et octobre, période 2010-2022).
 - FC-PN-77-07_AD.xlsx : Matrice de traits fonctionnels alimentée par différents collaborateurs et partiellement complétée durant le stage. Aucun historique des modifications, des contributeurs ni des sources utilisées → traçabilité insuffisante, rendant une FAIRisation complète impossible
 - ProductivityANN01.xlsx : Macro Excel développée par Thomas Brey pour estimer la productivité des espèces (disponible en libre accès sur http://www.thomas-brey.de/science/virtualhandbook/navlog/index.html).
-- SOMLIT_RoscoffEstacade_Hydro_v2023.xlsx : Données de température SOMLIT pour la station Estacade (2010-2023), transmises directement par l’encadrant. Aucun DOI n’y était associé mais elles sont bien trouvables sur SEANOE (https://www.seanoe.org/data/00891/100323/, DOI 10.17882/100323) ou sur demande via somlit.fr.
+- SOMLIT_RoscoffEstacade_Hydro_v2023.xlsx : Données de température SOMLIT pour la station Estacade (2010-2023), transmises directement par l’encadrant. Aucun DOI n’y était associé mais elles sont bien trouvables sur SEANOE (https://www.seanoe.org/data/00891/100323/, DOI 10.17882/100323) ou sur demande via https://www.somlit.fr/.
+
 Deux fichiers de métadonnées accompagnaient également ces données d’entrée : 
 - Coding.xlsx : règles de codage des traits fonctionnels
 - Taxonomy-PN-77-07.xlsx : informations taxonomiques de plus de 350 espèces, sans PID
@@ -64,7 +65,7 @@ Bien qu'on observe une première logique d'organisation, la structure initiale r
 Bien qu’une section “matériel et méthodes” soit présentée dans le rapport, elle ne décrit pas précisément le passage des données initiales vers les analyses. De plus, aucun ReadMe n’était présent. 
 
 ### 4) Scripts initiaux
-Voici un exemple d'un script ([PCoA Bio withoutrare.R](<./Scripts/InitialScripts/PCoA Bio withoutrare.R>)) non FAIRisé : 
+Voici un exemple d'un script ([PCoA Bio wthrare.R](<./Scripts/InitialScripts/PCoA Bio wthrare.R>)) non FAIRisé : 
 
 ```
 1 library(vegan)
@@ -93,9 +94,11 @@ Deux fichiers de métadonnées au format .csv ont été créés pour accompagner
 | Prionospio multibranchiata | 131160 | ambiguous | HistoricalConfusion | Prionospio multibranchiata | Berkeley, 1927 | Animalia| Annelida | Polychaeta | Spionida | Spionidae | Prionospio |
 
 → Objectif : se rapprocher d’une standardisation conforme à Darwin Core
+
 Remarque : _Certaines correspondances étaient ambiguës ; ces cas sont indiqués dans les colonnes Match_Type et Ambiguity du fichier de métadonnées (par ex. ambiguïtés liées à des homonymes (Homonym) ou à des erreurs historiques de classification (HistoricalConfusion)._
 
 -  [MetadataSampling_PierreNoire_2010-2022.csv](./Metadata/Metadata_BiomassAbundance/MetadataSampling_PierreNoire_2010-2022.csv) contenant : méthode d’échantillonnage, surface échantillonnée, unité, coordonnées (latitude/longitude), PID associé au site, profondeur, opérateur (non renseigné ici car information manquante)
+
 → Objectif : se rapprocher du standard BENTHOBS car adapté à la nature de nos données. Une FAIRisation complète selon ce standard n’est pas possible car certaines informations et données requises n’étaient pas disponibles. 
     
 ### 2) Organisation de l'espace de travail
@@ -137,8 +140,9 @@ A partir du fichier initial BiomassAbundance_PierreNoire_2010-2022.csv, la bioma
 
 ##### Etape 2 : Calcul de la productivité
 La productivité annuelle de chaque espèce a été estimée à l'aide de la macro Excel développée par Brey ([BreyProductivity_MacroExcel.xlsx](./Tool/BreyProductivity_MacroExcel.xlsx)), qui calcule automatiquement la productivité à partir d’un ensemble de variables écologiques et environnementales renseignées manuellement. Les données que l'on renseigne dans ce fichier sont : 
-- La température moyenne annuelle : calculée pour chaque année à partir des données [SOMLIT_RoscoffEstacade_1997-2023.csv](./Inputs/InitialData/SOMLIT_RoscoffEstacade_1997-2023.csv)
+- La température moyenne annuelle : calculée pour chaque année à partir des données [SOMLIT_RoscoffEstacade_1997-2023.csv](./Inputs/InitialData/SOMLIT_RoscoffEstacade_1997-2023.csv) (entre 2010 et 2023 pour ce stage).
 - Les modalités de plusieurs traits fonctionnels : renseignées à partir de la matrice de traits fonctionnels FunctionalTraitsMatrix.csv
+
 Remarque : _Comme cette macro demande un fichier d’entrée avec un format et une structure précise, un tableau intermédiaire a été construit durant le stage. Celui-ci renseigne, pour chaque espèce, l’ensemble des variables attendues par la macro, ce qui nous permet de remplir automatiquement le fichier Excel sans avoir à saisir manuellement chaque ligne._
 
 ##### Etape 3 : Calcul de la production secondaire
@@ -164,7 +168,7 @@ A partir des informations issues de la matrice de traits fonctionnels, attributi
 Création d’un tableau intermédiaire (KruskallWallis_Boxplot_Productivity.csv) regroupant, pour chaque groupe trophique, les valeurs de productivité obtenues précédemment
 
 ##### Etape 3 : Analyse statistique 
-Test de Kruskal - Wallis à partir du fichier KruskallWallis_Boxplot_Productivity.csv  → script [FunctionalGroupProductivity_KruskallWallis.R ](./Scripts/FinalScripts/FunctionalGroupProductivity_KruskallWallis.R ) 
+Test de Kruskal - Wallis à partir du fichier KruskallWallis_Boxplot_Productivity.csv  → script [FunctionalGroupProductivity_KruskallWallis.R](./Scripts/FinalScripts/FunctionalGroupProductivity_KruskallWallis.R ) 
 
 ##### Etape 4 : Résultat de l’analyse → ResultsKruskalWallis.jpeg
 
