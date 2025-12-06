@@ -168,13 +168,13 @@ A partir des informations issues de la matrice de traits fonctionnels, attributi
 Création d’un tableau intermédiaire (KruskallWallis_Boxplot_Productivity.csv) regroupant, pour chaque groupe trophique, les valeurs de productivité obtenues précédemment
 
 ##### Etape 3 : Analyse statistique 
-Test de Kruskal - Wallis à partir du fichier KruskallWallis_Boxplot_Productivity.csv  → script [FunctionalGroupProductivity_KruskallWallis.R](./Scripts/FinalScripts/FunctionalGroupProductivity_KruskallWallis.R ) 
+Test de Kruskal - Wallis à partir du fichier KruskallWallis_Boxplot_Productivity.csv  → script [ FunctionalGroupProductivity_KruskalWallis](./Scripts/FinalScripts/ FunctionalGroupProductivity_KruskalWallis) 
 
 ##### Etape 4 : Résultat de l’analyse → ResultsKruskalWallis.jpeg
 
 ### 4) Fairisation des scripts
 
-Le script initial [PCoA Bio withoutrare.R](<./Scripts/InitialScripts/PCoA Bio withoutrare.R>) a été révisé et amélioré en [BiomassWithoutRareSpecies_PCoA.R](./Scripts/FinalScripts/BiomassWithoutRareSpecies_PCoA.R) comme suit : 
+Le script initial [PCoA Bio wthrare.R](<./Scripts/InitialScripts/PCoA Bio wthrare.R>) a été révisé et amélioré en [BiomassWithoutRareSpecies_PCoA.R](./Scripts/FinalScripts/BiomassWithoutRareSpecies_PCoA.R) comme suit : 
 ```
 1 ########################################################
 2 # Description : Analyse PCOA - Comparaison des données annuelles 
