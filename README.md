@@ -15,7 +15,6 @@ Pour répondre à cette question, quatre objectifs ont été définis :
 - 1 : Compléter les suivis de la communauté macrobenthique de Pierre Noire via l'estimation de la production secondaire
 - 2 : Mettre en évidence la relation entre les variations interannuelles de production secondaire et les changements de structure de cette communauté 
 - 3 : Comparer les niveaux de productivité entre différents groupes trophiques 
-- 4 : Comparer les ratios P/B (productivité) calculés par différents modèles empiriques à des valeurs in situ issues de la littérature
 
 Les nombreux fichiers, scripts, et analyses produites durant ce projet pourraient être réutilisés pour de futurs suivis ou comparaisons, que ce soit par la stagiaire, l'encadrant ou d'autres chercheurs. Pour garantir cette réutilisation et permettre la reproductibilité de cette étude, il est essentiel de rendre l’ensemble des données et des traitements transparents et accessibles. C’est précisément ce que vise la démarche FAIR.
 
@@ -143,7 +142,7 @@ La productivité annuelle de chaque espèce a été estimée à l'aide de la mac
 - La température moyenne annuelle : calculée pour chaque année à partir des données SOMLIT_RoscoffEstacade_2010-2023.csv (Station Estacade, 2010-2023) 
 - Les modalités de plusieurs traits fonctionnels : renseignés à partir de la matrice de trait fonctionnels FunctionalTraitsMatrix.csv 
 
-Remarque : _ Comme cette macro demande un fichier d’entrée avec un format et une structure précise, un tableau intermédiaire a été construit durant le stage. Celui-ci renseigne, pour chaque espèce, l’ensemble des variables attendues par la macro, ce qui nous permet de remplir automatiquement le fichier excel sans avoir à saisir manuellement chaque ligne. _
+Remarque : _Comme cette macro demande un fichier d’entrée avec un format et une structure précise, un tableau intermédiaire a été construit durant le stage. Celui-ci renseigne, pour chaque espèce, l’ensemble des variables attendues par la macro, ce qui nous permet de remplir automatiquement le fichier excel sans avoir à saisir manuellement chaque ligne. _
 
 #### Etape 3 : Calcul de la production secondaire
 La production secondaire annuelle pour chaque espèce a été calculée dans un fichier intermédiaire selon la formule :
