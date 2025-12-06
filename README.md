@@ -35,8 +35,7 @@ Pour répondre aux objectifs, les fichiers au format Excel (.xlsx) fournis initi
 - pn-2010-2022_compil-abundance_biomasses_harm_iso.xlsx : Abondances et biomasses individuelles pour plus de 200 espèces (échantillonnages en mars et octobre, période 2010-2022).
 - FC-PN-77-07_AD.xlsx : Matrice de traits fonctionnels alimentée par différents collaborateurs et partiellement complétée durant le stage. Aucun historique des modifications, des contributeurs ni des sources utilisées → traçabilité insuffisante, rendant une FAIRisation complète impossible
 - ProductivityANN01.xlsx : Macro Excel développée par Thomas Brey pour estimer la productivité des espèces (disponible en libre accès sur http://www.thomas-brey.de/science/virtualhandbook/navlog/index.html).
-- SOMLIT_RoscoffEstacade_Hydro_v2023.xlsx : Données de température SOMLIT pour la station Estacade (2010-2023), transmises directement par l’encadrant. Aucun DOI n’y était associé mais elles sont bien trouvables sur SEANOE (seanoe.org, DOI 10.17882/100323) ou sur demande via somlit.fr.
-
+- SOMLIT_RoscoffEstacade_Hydro_v2023.xlsx : Données de température SOMLIT pour la station Estacade (2010-2023), transmises directement par l’encadrant. Aucun DOI n’y était associé mais elles sont bien trouvables sur SEANOE (https://www.seanoe.org/data/00891/100323/, DOI 10.17882/100323) ou sur demande via somlit.fr.
 Deux fichiers de métadonnées accompagnaient également ces données d’entrée : 
 - Coding.xlsx : règles de codage des traits fonctionnels
 - Taxonomy-PN-77-07.xlsx : informations taxonomiques de plus de 350 espèces, sans PID
