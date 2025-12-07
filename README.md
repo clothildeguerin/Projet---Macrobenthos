@@ -10,7 +10,7 @@ Les pressions anthropiques croissantes perturbent la structure et le fonctionnem
 Problématique de l'étude : quelle est la relation entre l’évolution de la production secondaire et
 les changements de structure de la communauté de Pierre Noire ?
 
-Pour répondre à cette question, quatre objectifs ont été définis : 
+Pour répondre à cette question, trois objectifs ont été définis : 
 - 1 : Compléter les suivis de la communauté macrobenthique de Pierre Noire via l'estimation de la production secondaire
 - 2 : Mettre en évidence la relation entre les variations interannuelles de production secondaire et les changements de structure de cette communauté 
 - 3 : Comparer les niveaux de productivité entre différents groupes trophiques 
@@ -141,7 +141,7 @@ A partir du fichier initial BiomassAbundance_PierreNoire_2010-2022.csv, la bioma
 
 ##### Etape 2 : Calcul de la productivité
 La productivité annuelle de chaque espèce a été estimée à l'aide de la macro Excel développée par Brey ([BreyProductivity_MacroExcel.xlsx](./Inputs/Tool/BreyProductivity_MacroExcel.xlsx)), qui calcule automatiquement la productivité à partir d’un ensemble de variables écologiques et environnementales renseignées manuellement. Les données que l'on renseigne dans ce fichier sont : 
-- La température moyenne annuelle : calculée pour chaque année à partir des données [SOMLIT_RoscoffEstacade_1997-2023.csv](./Inputs/InitialData/SOMLIT_RoscoffEstacade_1997-2023.csv) (entre 2010 et 2023 pour ce stage).
+- La température moyenne annuelle : calculée pour chaque année à partir des données [SOMLIT_RoscoffEstacade_1997-2023.csv](./Inputs/InitialData/SOMLIT_RoscoffEstacade_1997-2023.csv) (entre 2010 et 2022 pour ce stage).
 - Les modalités de plusieurs traits fonctionnels : renseignées à partir de la matrice de traits fonctionnels FunctionalTraitsMatrix.csv
 
 Remarque : _Comme cette macro demande un fichier d’entrée avec un format et une structure précise, un tableau intermédiaire a été construit durant le stage. Celui-ci renseigne, pour chaque espèce, l’ensemble des variables attendues par la macro, ce qui nous permet de remplir automatiquement le fichier Excel sans avoir à saisir manuellement chaque ligne._
